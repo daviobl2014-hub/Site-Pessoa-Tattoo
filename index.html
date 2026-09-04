@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pessôa Tattoo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Jost:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ================================================================
+       HEADER
+       
+       ================================================================ -->
+    <header class="header" id="mbHeader">
+      <!-- Faixa utilitária superior -->
+
+      <div class="nav-left" onclick="location.href = 'index.html'">
+        <div class="logo">
+          <img src="img/logo.png" alt="logo pessoa-tatoo" />
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <div class="nav-links">
+          <a href="#inicio" class="active">Home</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+          <a href="#endereco">Endereço</a>
+        </div>
+      </nav>
+
+      <div class="utility-strip">
+        <span class="social">
+          <a
+            href="https://www.instagram.com/pessoalucastattoo?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
+            target="_blank"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@pessoalucas?_r=1&_t=ZS-999gOnDMJyp"
+            target="_blank"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+          <a href="https://www.facebook.com/pessoaartetattoo" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <!-- ================================================================
+       HOME 
+       ================================================================ -->
+    <section class="hero" id="inicio">
+      <div class="container-hero">
+        <div class="pessoa-img">
+          <img src="img/pessoa.png" alt="nome Pessôa" />
+          <div class="texto-hero">
+            <h1>Tatuagem fineline e blackwork</h1>
+            <div class="fio"></div>
+            <p>
+              Do rascunho à cicatrização, a Pessôa Tattoo cuida de cada etapa do
+              seu projeto.
+            </p>
+          </div>
+        </div>
+        <div class="lucas-img"><img src="img/lucas.png" alt="lucas" /></div>
+        <div class="tatoo-img">
+          <img src="img/tatoo.png" alt="tattoo" />
+          <div class="texto-hero">
+            <a
+              href="https://wa.me/5524992363035"
+              class="btn"
+              target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i>Agendar minha Tattoo</a
+            >
+            <p>Atendimento Exclusivo via WhatsApp</p>
+          </div>
+        </div>
+      </div>
+      <div class="local">
+        <span> Petrópolis - RJ</span>
+      </div>
+    </section>
+
+    <!-- ================= GALERIA ================= -->
+    <section class="galeria" id="galeria">
+      <h2>Galeria</h2>
+      <div class="fio"></div>
+
+      <div class="barra">
+        <h3 class="sub">Trabalhos na pele</h3>
+
+        <div class="filtros">
+          <button class="is-ativo" data-filtro="todos">Todos</button>
+          <button data-filtro="blackwork">Blackwork</button>
+          <button data-filtro="fineline">Fineline</button>
+          <button data-filtro="realismo">Realismo</button>
+        </div>
+      </div>
+
+      <div class="carrossel">
+        <button class="seta prev" aria-label="Imagem anterior">&#8249;</button>
+
+        <div class="trilho">
+          <!-- TROQUE o src por: imagens/tattoo-01.jpg  (mantenha o data-cat) -->
+          <figure class="g-item" data-cat="blackwork">
+            <img src="img/black1.png"
+              src=""
+              alt="Tatuagem blackwork no braço"
+              loading="lazy"
+            />
+            <figcaption>Blackwork — braço fechado</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="fineline">
+            <img
+              src="img/fine1.png"
+              alt="Tatuagem fineline no antebraço"
+              loading="lazy"
+            />
+            <figcaption>Fineline — Costas</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="realismo">
+            <img
+              src="img/realismo1.png"
+              alt="Tatuagem realismo preto e cinza"
+              loading="lazy"
+            />
+            <figcaption>Realismo — preto e cinza</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="fineline">
+            <img src="img/fine3.png" alt="Traço fino floral" loading="lazy" />
+            <figcaption>Fineline — floral</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="blackwork">
+            <img
+              src="img/black2.png"
+              alt="Blackwork geométrico na perna"
+              loading="lazy"
+            />
+            <figcaption>Blackwork — geométrico</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="realismo">
+            <img
+              src="img/realismo2.png"
+              alt="Retrato realista no braço"
+              loading="lazy"
+            />
+            <figcaption>Realismo — retrato</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="blackwork">
+            <img src="img/black4.png" alt="Blackwork oriental" loading="lazy" />
+            <figcaption>Blackwork — oriental</figcaption>
+          </figure>
+          <figure class="g-item" data-cat="realismo">
+            <img
+              src="img/realismo3.png"
+              alt="Retrato realista no braço"
+              loading="lazy"
+            />
+            <figcaption>Realismo — retrato</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="fineline">
+            <img src="img/fine2.png" alt="Traço fino floral" loading="lazy" />
+            <figcaption>Fineline — Braço</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="blackwork">
+            <img
+              src="img/black3.png"
+              alt="Blackwork oriental"
+              loading="lazy"
+            />
+            <figcaption>Blackwork — oriental</figcaption>
+          </figure>
+          <figure class="g-item" data-cat="realismo">
+            <img
+              src="img/realismo4.png"
+              alt="Retrato realista no braço"
+              loading="lazy"
+            />
+            <figcaption>Realismo — retrato</figcaption>
+          </figure>
+
+          <figure class="g-item" data-cat="fineline">
+            <img
+              src="img/fine4.png"
+              alt="Traço fino Borboleta"
+              loading="lazy"
+            />
+            <figcaption>Fineline — Borboleta</figcaption>
+          </figure>
+        </div>
+
+        <button class="seta next" aria-label="Próxima imagem">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- ================= SOBRE ================= -->
+
+    <section class="sobre" id="sobre">
+      <h2>Sobre</h2>
+      <div class="fio"></div>
+      <div class="container-sobre">
+        <img src="img/lucas-tattoo.jpeg" alt="tatuador lucas Pessoa" />
+        <div class="artista">
+          <h2>Artista</h2>
+          <p>
+            Pessôa Tattoo é sinônimo de dedicação, criatividade e excelência.
+            Cada traço carrega propósito. Cada tatto conta uma história. Mais
+            que tatuar, é transformar ideias em arte que permanece.
+          </p>
+        </div>
+
+        <div class="funciona">
+          <h3>Atendimento</h3>
+          <div class="bloco-1">
+            <div class="bola">1</div>
+            <h4>Ideia</h4>
+            <div class="linha-hor"></div>
+            <p>Você traz a sua ideia e conversamos sobre o projeto.</p>
+          </div>
+
+          <div class="bloco-2">
+            <div class="bola">2</div>
+            <h4>Projeto</h4>
+            <div class="linha-hor"></div>
+            <p>Desenvolvemos um desenho exclusivo para você.</p>
+          </div>
+
+          <div class="bloco-3">
+            <div class="bola">3</div>
+            <h4>Tattoo</h4>
+            <div class="linha-hor"></div>
+            <p>com técnica, segurança e qualidade, transformamos em arte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section class="contato" id="contato">
+      
+      <h2>Contato</h2>
+      <div class="fio"></div>
+      
+      <div class="caixa"> 
+        
+          <div class="titulo">
+            <h3>Vamos criar algo único! </h3>
+            <p>Sua ideia, Minha arte, Pra Sempre!</p>
+          </div>
+
+          <div class="telefone">
+            <div class="logo-tel">
+
+              <span class="tel" role="img" aria-label="Telefone"></span>
+              
+          
+            </div>
+            <div class="texto">
+              <h3>TELEFONE</h3>
+              <h4>(24) 99236-3035</h4>
+            </div>
+          </div>
+
+          <div class="horario">
+            <div class="logo-hor">
+              
+                 <span class="hor" role="img" aria-label="Horário"></span>
+            </div>
+            <div class="texto">
+              <h3>HORÁRIO</h3>
+              <h4>Segunda a Sabado: 10h às 18h</h4>
+            </div>
+          </div>
+
+          </div>
+        
+
+     
+              
+            </section>
+            
+            <!-- ================= ENDEREÇO ================= -->
+            
+            
+            <section class="endereco" id="endereco">
+              <h2>Endereço</h2>
+      <div class="fio"></div>
+
+      <div class="container-end">
+        <div class="bloco-text">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <h3>Petrópolis - RJ</h3>
+          <p>Atendimento com hora marcada e total privacidade</p>
+
+                    <a
+                href="https://share.google/mVgV3WxwlAHT42fp2"
+                class="btn"
+                target="_blank"
+                >Abrir Google Maps
+                <span> > </span>
+                </a
+                > 
+        </div>
+
+       <img src="img/studio.png" alt="studio">
+
+        <div class="bloco-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.76611315311!2d-43.177620399999995!3d-22.512956799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99096333902653%3A0x54922014c6916b09!2sPessoa%20tattoo!5e0!3m2!1spt-BR!2sbr!4v1788444489374!5m2!1spt-BR!2sbr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      </div>
+            </section>
+
+            <!-- ================= RODAPÉ ================= -->
+
+            <footer>
+              <p>&copy; Desde 2017 Pessoa Tattoo. Todos os direitos reservados.</p>
+            </footer>
+
+    <!-- logo whatssap -->
+    <a
+      href="https://wa.me/5524992363035"
+      class="logo-whatssap"
+      target="_blank"
+      aria-label="Falar no WhatsApp"
+    >
+      <img src="img/whatssap.png" alt="" />
+    </a>
+
+    <!-- pop up dialog das imagens carrossel -->
+
+    <dialog class="lightbox" id="lightbox">
+      <button class="lightbox-fechar" aria-label="Fechar">&times;</button>
+      <img src="" alt="" />
+      <p class="lightbox-legenda"></p>
+    </dialog>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

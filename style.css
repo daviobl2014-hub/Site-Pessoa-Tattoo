@@ -1,0 +1,972 @@
+/* ================================================================
+   1. VARIÁVEIS DE TEMA — cores e fontes da Master Bord
+   Para mudar uma cor em TODO o site, edite aqui.
+   ================================================================ */
+:root {
+  /* Cores — extraídas do mb-theme.jsx */
+  --mb-bg: #0f1116;
+  --mb-bg-soft: #181b22;
+  --mb-bg-deep: #10100a;
+  --mb-card: #20242d;
+  --mb-card-hover: #262b36;
+  --mb-paper: #f2ece0;
+  --mb-paper-dim: #d4cfc3;
+  --mb-azul: #4a8bd6;
+  --mb-azul-glow: #6ba8e8;
+  --mb-vinho: #c44b55;
+  --mb-vinho-glow: #e56670;
+  --mb-ouro: #d4a96a;
+  --mb-muted: #8b8f99;
+  --mb-line: #2e3340;
+  --mb-line-soft: #1f2430;
+  --mb-green: #7fc291;
+
+  /* Fontes */
+  --font-display: 'UnifrakturCook', serif; /* marca, impacto */
+  --font-titulo: 'Cormorant Garamond', Georgia, serif; /* h1 e h2 de seção */
+  --font-sans: 'Jost', system-ui, sans-serif; /* corpo e UI */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+/* ================================================================
+   2. RESET E BASE
+   ================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  background: black;
+  color: var(--mb-paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4.2rem, 6vw, 7rem);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(255, 255, 255, 0.14) 0px 0px 2.6rem;
+  z-index: 99;
+}
+
+h3 {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  font-size: 1.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-size: 1.4rem;
+  color: var(--mb-paper-dim);
+}
+
+/* ================================================================
+   3. HEADER — barra superior fixa (presente em todas as páginas)
+   ================================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: black;
+  border-bottom: 1px solid var(--mb-line);
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
+
+  /* ---------- logo (esquerda) ---------- */
+  & .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+    cursor: pointer;
+
+    & .logo {
+      transition: transform 0.3s ease;
+      width: 4rem;
+      height: 6rem;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  /* ---------- navegação (centro) ---------- */
+  & .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    & .nav-links {
+      display: flex;
+      gap: 2.2rem;
+
+      & a {
+        font-family: var(--font-titulo);
+        color: var(--mb-muted);
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding-bottom: 2px;
+        border-bottom: 1px solid transparent;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+
+        &.active,
+        &:hover {
+          color: var(--mb-paper);
+          border-bottom-color: var(--mb-vinho);
+        }
+      }
+    }
+  }
+
+  /* ---------- redes sociais (direita) ---------- */
+  & .utility-strip {
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem 0;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--mb-muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    & .social {
+      display: flex;
+      gap: 0.6rem;
+
+      & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      & i {
+        font-size: 1.4rem;
+        color: #fff;
+        transition: transform 0.2s ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+/* ================================================================
+   4. HOME
+   ================================================================ */
+
+.hero {
+  min-height: 90vh;
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(img/hero.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: inset 0 0 10rem 10rem rgba(0, 0, 0, 9);
+
+  /* ---------- faixa preta ---------- */
+  & .local {
+    font-family: var(--font-titulo);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    text-align: center;
+    letter-spacing: 0.3em;
+    color: white;
+    z-index: 101;
+    box-shadow: 0 -2px 10px 10px rgba(0, 0, 0, 0.904);
+  }
+  /* ---------- palco das 3 imagens ---------- */
+  & .container-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 130rem;
+    margin: 0 auto;
+  }
+
+  & .pessoa-img,
+  & .tatoo-img {
+    height: 18rem;
+    width: 45rem;
+    position: relative;
+  }
+
+  & .lucas-img {
+    width: 40rem;
+    position: relative;
+    z-index: 99;
+  }
+
+  /* --- lado esquerdo --- */
+  & .pessoa-img {
+    margin-right: -9%;
+    margin-top: -12.5rem; /* Ajuste fino para alinha img */
+
+    & .texto-hero {
+      text-shadow: 0 0 2.6rem rgba(255, 255, 255, 0.14);
+      left: 0;
+      text-align: left;
+      padding-left: 4rem;
+      letter-spacing: 0.2rem;
+
+      & p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        max-width: 28rem;
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+
+  /* --- lado direito --- */
+  & .tatoo-img {
+    margin-left: -10%;
+    margin-top: -16rem; /* Ajuste fino para alinha img */
+
+    & .texto-hero {
+      right: 0;
+      left: auto;
+      text-align: right;
+      padding-right: 2rem;
+      width: fit-content;
+      align-items: center;
+    }
+  }
+  /* --- caixa de texto (comum aos dois lados) --- */
+  & .texto-hero {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    gap: 2rem;
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    width: 35rem;
+    color: var(--mb-paper-dim);
+    z-index: 100;
+
+    & h1 {
+      font-family: var(--font-titulo);
+      font-size: 2.5rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0rem;
+    }
+    & .fio {
+      width: 90%;
+      margin: 0;
+      text-align: left;
+    }
+  }
+}
+/* ================================================================
+   5. GALERIA
+   ================================================================ */
+
+.galeria {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(img/FUMACA.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  scroll-margin-top: 6rem;
+  padding: 9rem 4rem;
+  max-width: 150rem;
+  margin: 2px auto;
+  box-shadow: inset 0 0 10rem 10rem rgba(0, 0, 0, 9);
+
+  /* ---------- barra: subtítulo + filtros ---------- */
+  & .barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.8rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--mb-line-soft);
+    padding-bottom: 1.6rem;
+    margin-bottom: 3.4rem;
+
+    & .filtros {
+      display: flex;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+
+      & button {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        cursor: pointer;
+        font-family: var(--font-titulo);
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        /* text-transform: uppercase; */
+        color: var(--mb-muted);
+        padding-bottom: 2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+
+        &.is-ativo,
+        &:hover {
+          color: var(--mb-paper);
+          border-bottom-color: var(--mb-vinho);
+        }
+
+        &:focus-visible {
+          outline: 1px solid var(--mb-vinho);
+          outline-offset: 3px;
+        }
+      }
+    }
+
+    & .sub {
+      font-family: var(--font-titulo);
+      font-weight: 400;
+      font-size: 2.2rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+
+  /* ---------- carrossel ---------- */
+  & .carrossel {
+    position: relative;
+
+    & .trilho {
+      --cards: 4;
+      --gap: 1.4rem;
+
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc(
+        (100% - (var(--cards) - 1) * var(--gap)) / var(--cards)
+      );
+      gap: var(--gap);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 0.6rem;
+      scrollbar-width: none;
+
+      @media (max-width: 1100px) {
+        --cards: 3;
+      }
+      @media (max-width: 800px) {
+        --cards: 2;
+      }
+      @media (max-width: 520px) {
+        --cards: 1;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    /* --- cada foto --- */
+    & .g-item {
+      cursor: pointer;
+      margin: 0;
+      position: relative;
+      scroll-snap-align: start;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--mb-bg-deep);
+      border: 1px solid var(--mb-line-soft);
+
+      &[hidden] {
+        display: none;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(0.8) brightness(0.82);
+        transition:
+          filter 0.45s ease,
+          transform 0.6s ease;
+      }
+
+      & figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 1.15rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--mb-paper-dim);
+        padding: 2.6rem 1.4rem 1.2rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.88), transparent);
+        opacity: 0;
+        transition: opacity 0.35s;
+      }
+
+      &:hover {
+        & img {
+          filter: blur(0px) brightness(1);
+          transform: scale(1.05);
+        }
+        & figcaption {
+          opacity: 1;
+        }
+      }
+    }
+
+    /* --- setas --- */
+    & .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4.6rem;
+      height: 4.6rem;
+      border-radius: 50%;
+      background: rgba(8, 8, 8, 0.82);
+      border: 1px solid var(--mb-line);
+      color: var(--mb-paper-dim);
+      font-family: var(--font-titulo);
+      font-size: 2.4rem;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 3;
+      transition:
+        background 0.25s,
+        border-color 0.25s,
+        opacity 0.25s;
+
+      &:hover {
+        background: var(--mb-vinho);
+        border-color: var(--mb-vinho);
+        color: #fff;
+      }
+
+      &[disabled] {
+        opacity: 0.22;
+        cursor: default;
+
+        &:hover {
+          background: rgba(8, 8, 8, 0.82);
+          border-color: var(--mb-line);
+          color: var(--mb-paper-dim);
+        }
+      }
+
+      &:focus-visible {
+        outline: 1px solid var(--mb-vinho);
+        outline-offset: 3px;
+      }
+    }
+
+    & .prev {
+      left: -1.4rem;
+    }
+    & .next {
+      right: -1.4rem;
+    }
+  }
+}
+
+.lightbox {
+  margin: auto;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 96vw;
+  max-height: 96vh;
+  overflow: visible;
+  color: var(--mb-paper-dim);
+
+  /* ---------- o fundo embaçado ---------- */
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+  }
+
+  & img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 88vh;
+    border: 1px solid var(--mb-line);
+  }
+
+  & .lightbox-legenda {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  & .lightbox-fechar {
+    position: absolute;
+    top: 0.5;
+    right: -5rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: none;
+    border: 1px solid var(--mb-line);
+    border-radius: 50%;
+    color: var(--mb-paper-dim);
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      background 0.25s,
+      border-color 0.25s;
+
+    &:hover {
+      background: var(--mb-vinho);
+      border-color: var(--mb-vinho);
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--mb-vinho);
+      outline-offset: 3px;
+    }
+  }
+
+  /* ---------- o "salto" ao abrir ---------- */
+  &[open] {
+    animation: lightbox-entra 0.28s ease-out;
+
+    &::backdrop {
+      animation: lightbox-fundo 0.28s ease-out;
+    }
+  }
+}
+
+@keyframes lightbox-entra {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+}
+
+@keyframes lightbox-fundo {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ================================================================
+   6. SOBRE
+   ================================================================ */
+
+.sobre {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url(img/FUNDO-PEDRA.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 9rem 4rem;
+  max-width: 150rem;
+  margin: 0 auto;
+  box-shadow: inset 0 0 10rem 10rem rgba(0, 0, 0, 9);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  & .container-sobre {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr auto;
+    gap: 2rem 3rem;
+    align-content: center;
+    justify-content: center;
+    padding: 2rem;
+
+    & img {
+      height: 40rem;
+      border-radius: 0.5rem;
+      box-shadow: 0px 0px 10rem 8rem rgba(0, 0, 0, 0.5);
+      grid-row: 1/-1;
+      mask-image: radial-gradient(ellipse at center, #000 55%, transparent);
+      filter: drop-shadow(0 0 2rem rgba(0, 0, 0, 0.5));
+    }
+
+    & h2 {
+      font-family: var(--font-titulo);
+      font-weight: 400;
+      font-size: 2.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    & .artista {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 2rem;
+
+      & p {
+        font-size: 1.6rem;
+        line-height: 1.5;
+        max-width: 60rem;
+      }
+    }
+
+    & .funciona {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem 2rem;
+
+      & h3 {
+        padding: 1rem 0;
+      }
+
+      & .bloco-1,
+      & .bloco-2,
+      & .bloco-3 {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        & .bola {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          background-color: var(--mb-vinho);
+          border-radius: 50%;
+          font-size: 2.2rem;
+          width: 4rem;
+          height: 4rem;
+          color: var(--mb-paper-dim);
+          box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+        }
+
+        & h4 {
+          font-family: var(--font-titulo);
+          font-size: 1.5rem;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          color: var(--mb-vinho);
+        }
+
+        & .linha-hor {
+          height: 1px;
+          width: 1rem;
+          background: var(--mb-vinho);
+        }
+      }
+    }
+  }
+}
+
+/* ================================================================
+   7. CONTATO
+   ================================================================ */
+
+.contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url(img/tatoo-fundo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  scroll-margin-top: 6rem;
+  padding: 4rem 4rem;
+  max-width: 150rem;
+  box-shadow: inset 0 0 10rem 10rem rgba(0, 0, 0, 9);
+
+  & .caixa {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem 3rem;
+    width: 80%;
+    height: 30rem;
+    border-radius: 1rem;
+    border: 1px solid var(--mb-line-soft);
+    box-shadow: 0 0 10rem 10rem rgba(0, 0, 0, 9);
+
+    & .titulo {
+      text-align: center;
+      padding: 2rem;
+      grid-column: 1/-1;
+    }
+
+    & .telefone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      & .logo-tel {
+        display: grid;
+        place-items: center;
+        width: 8rem;
+        height: 8rem;
+        border: solid 1px var(--mb-vinho);
+        background-color: black;
+        border-radius: 1rem;
+
+        & .tel {
+          width: 4rem;
+          height: 4rem;
+          background-color: var(--mb-paper);
+          -webkit-mask: url(img/telefone.svg) center / contain no-repeat;
+          mask: url(img/telefone.svg) center / contain no-repeat;
+        }
+      }
+      & .texto {
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: var(--mb-paper-dim);
+      }
+    }
+    & .horario {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      & .logo-hor {
+        display: grid;
+        place-items: center;
+        width: 8rem;
+        height: 8rem;
+        border: solid 1px var(--mb-vinho);
+        background-color: black;
+        border-radius: 1rem;
+
+        & .hor {
+          width: 6rem;
+          height: 6rem;
+          background-color: var(--mb-paper);
+          -webkit-mask: url(img/horario.svg) center / contain no-repeat;
+          mask: url(img/horario.svg) center / contain no-repeat;
+        }
+      }
+      & .texto {
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: var(--mb-paper-dim);
+      }
+    }
+  }
+}
+
+/* ================================================================
+   7. ENDEREÇO
+   ================================================================ */
+
+.endereco {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url(img/estatua.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  scroll-margin-top: 6rem;
+  padding: 4rem 4rem;
+  max-width: 150rem;
+  box-shadow: inset 0 0 10rem 10rem rgba(0, 0, 0, 9);
+
+  & .container-end {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    place-items: center;
+    gap: 2rem;
+
+    & .bloco-text {
+      width: 40rem;
+      text-align: center;
+      text-shadow: rgb(0, 0, 0) 0px 0px 2.6rem;
+      & .fio {
+        margin: 0 auto 2rem;
+      }
+      & i {
+        font-size: 2.6rem;
+      }
+
+      & h3 {
+        font-size: 2.6rem;
+      }
+
+      & .btn {
+        font-weight: bold;
+        & span {
+          font-size: 2.2rem;
+          font-weight: 700;
+          color: var(--mb-vinho);
+        }
+        &:hover {
+          background-color: var(--mb-vinho);
+          color: var(--mb-paper);
+          border: solid 2px var(--mb-vinho);
+          transform: scale(1.05);
+          & span {
+            color: var(--mb-green);
+          }
+        }
+      }
+    }
+    & .bloco-iframe {
+      grid-column: 1/-1;
+      width: 100%;
+      height: 50rem;
+      border-radius: 1rem;
+      border: solid 4px var(--mb-paper);
+      overflow: hidden;
+      & iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  & img {
+    height: 40rem;
+    mask-image: linear-gradient(to left, #000 80%, transparent);
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.5));
+    object-fit: cover;
+    object-position: center 5%;
+  }
+}
+
+/* ================================================================
+   8. RODAPÉ
+   ================================================================ */
+footer {
+  background: black;
+  border-top: 1px solid var(--mb-line);
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--mb-paper-dim);
+}
+
+/* ================================================================
+   9. COMPONENTES — reutilizáveis em qualquer página
+   ================================================================ */
+.fio {
+  width: 7rem;
+  height: 1px;
+  background: var(--mb-vinho);
+  margin: 0 auto 3rem;
+  z-index: 99;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  margin-top: 5rem;
+  background: black;
+  color: var(--mb-paper);
+  border: solid 2px var(--mb-paper);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 1.3rem;
+  border-radius: 4px;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    transform 0.3s ease;
+  align-self: center;
+
+  & .fa-brands {
+    font-size: 1.8rem;
+  }
+
+  &:hover {
+    background: var(--mb-paper);
+    color: black;
+    font-weight: bold;
+
+    & .fa-brands {
+      color: green;
+    }
+  }
+}
+
+/* whatssap logo */
+
+.logo-whatssap {
+  position: fixed;
+  right: 3rem;
+  bottom: 4rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: 998;
+  /* estado escondido */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  /* estado visível — o JS liga esta classe */
+  &.visivel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
