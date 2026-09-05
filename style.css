@@ -278,12 +278,12 @@ p {
   }
   /* --- caixa de texto (comum aos dois lados) --- */
   & .texto-hero {
+    margin-top: 1rem;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
     gap: 2rem;
     position: absolute;
-    top: calc(100% + 0.8rem);
     width: 35rem;
     color: var(--mb-paper-dim);
     z-index: 100;
@@ -1112,6 +1112,7 @@ footer {
   }
 
   /* vinheta interna mais suave: 10rem de spread comia ~200px numa tela estreita */
+  .hero,
   .galeria,
   .sobre,
   .duvidas,
@@ -1132,28 +1133,123 @@ footer {
   }
 
   .hero {
+    /* o layout de 3 colunas com margens negativas e texto em position:absolute
+       so funciona lado a lado; aqui vira uma coluna unica no fluxo normal */
+    min-height: auto;
+    justify-content: center;
+    padding: 3rem 1.5rem 0;
+
     & .container-hero {
-      display: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
     }
 
-    /* as margens negativas sobrepunham as imagens no layout em linha;
-       empilhado elas so empurram a caixa pra fora da tela */
-    & .pessoa-img {
-      margin-right: 0;
-    }
-
-    & .tatoo-img {
-      margin-left: 0;
-    }
-
+    /* display:contents dissolve o wrapper: a imagem e o .texto-hero viram
+       itens diretos do .container-hero, e so assim o order alcanca os dois */
     & .pessoa-img,
-    & .tatoo-img,
-    & .lucas-img {
-      max-width: 100%;
+    & .tatoo-img {
+      display: contents;
     }
 
+    & .pessoa-img > img {
+      order: 1;
+    }
+
+    & .lucas-img {
+      order: 2;
+    }
+
+    & .tatoo-img > img {
+      order: 3;
+    }
+
+    & .pessoa-img > .texto-hero {
+      order: 4;
+    }
+
+    & .tatoo-img > .texto-hero {
+      order: 5;
+    }
+
+    /* as faixas pessoa.png (1140x397) e tatoo.png (1016x399) sao horizontais */
+    & .pessoa-img > img,
+    & .tatoo-img > img {
+      width: 100%;
+      max-width: 30rem;
+      height: auto;
+      margin: 0;
+    }
+
+    /* a foto e retrato (1122x1402), entao pede menos largura */
+    & .lucas-img {
+      position: static;
+      width: 100%;
+      max-width: 20rem;
+      height: auto;
+      margin: 0;
+    }
+
+    /* tirar o absolute e o que resolve o texto "solto" dentro da imagem */
     & .texto-hero {
-      max-width: 100%;
+      position: static;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 32rem;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+      gap: 1.2rem;
+
+      & p {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      & .fio {
+        width: 7rem;
+        margin: 0 auto;
+      }
+
+      & .btn {
+        align-self: center;
+        margin: 0;
+      }
+    }
+
+    /* estas duas precisam de 3 classes: as regras do desktop
+       (.hero .pessoa-img .texto-hero) tem especificidade maior que
+       .hero .texto-hero e venceriam mesmo dentro da media query */
+    & .pessoa-img .texto-hero {
+      text-align: center;
+      padding-left: 0;
+
+      & p {
+        max-width: 100%;
+      }
+    }
+
+    & .tatoo-img .texto-hero {
+      text-align: center;
+      padding-right: 0;
+      width: 100%;
+      align-items: center;
+    }
+
+    /* sai do absolute para cair no fluxo, depois do botao;
+       as margens negativas devolvem a faixa preta de ponta a ponta */
+    & .local {
+      position: static;
+      align-self: stretch;
+      width: auto;
+      margin: 0rem -1.5rem 0;
+      padding: 1.2rem;
+      box-shadow: none;
     }
   }
 
