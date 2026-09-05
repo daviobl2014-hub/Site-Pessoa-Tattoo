@@ -133,3 +133,18 @@ if (secoes.length && linksNav.length) {
 
   secoes.forEach((secao) => observadorNav.observe(secao));
 }
+const cabecalhos = document.querySelectorAll('.cabecalho-item');
+
+cabecalhos.forEach((cabecalho) => {
+  cabecalho.addEventListener('click', () => {
+    // Fecha todos os outros
+    cabecalhos.forEach((item) => {
+      if (item !== cabecalho) {
+        item.classList.remove('aberto');
+      }
+    });
+
+    // Abre ou fecha o clicado
+    cabecalho.classList.toggle('aberto');
+  });
+});
