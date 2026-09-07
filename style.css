@@ -119,6 +119,27 @@ p {
     }
   }
 
+  /* ---------- botao hamburguer (so aparece abaixo de 500px) ---------- */
+  & .btn-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--mb-paper);
+    font-size: 2.2rem;
+    line-height: 1;
+    padding: 0.6rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    & .fa-xmark {
+      display: none;
+    }
+  }
+
   /* ---------- navegação (centro) ---------- */
   & .main-nav {
     display: flex;
@@ -549,7 +570,7 @@ p {
 
   & .lightbox-fechar {
     position: absolute;
-    top: 0.5;
+    top: 0.5rem;
     right: -5rem;
     width: 3.6rem;
     height: 3.6rem;
@@ -663,6 +684,7 @@ p {
       gap: 1rem;
       align-items: start;
       padding: 1rem 2rem;
+      margin-bottom: 1rem;
 
       & h3 {
         padding: 1rem 0;
@@ -700,7 +722,7 @@ p {
         & .linha-hor {
           height: 1px;
           width: 1rem;
-          background: var(--mb-vinho);
+          background: var(--mb-line);
         }
       }
     }
@@ -1338,6 +1360,152 @@ footer {
     }
   }
 
+  /* ---------- menu hamburguer (ate 500px) ---------- */
+  @media (max-width: 500px) {
+    .header {
+      /* linha 1: logo a esquerda, botao a direita.
+         linha 2 e 3 (lista e icones) so aparecem com .menu-aberto */
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+      gap: 2rem;
+      height: 6rem;
+
+      /* os dois glifos empilhados na mesma celula para poder cruzar */
+      & .btn-menu {
+        display: grid;
+        place-items: center;
+        width: 3.4rem;
+        height: 3.4rem;
+
+        & .fa-bars,
+        & .fa-xmark {
+          display: block;
+          grid-area: 1 / 1;
+          transition:
+            opacity 0.2s ease,
+            rotate 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+            scale 0.2s ease;
+        }
+
+        & .fa-xmark {
+          opacity: 0;
+          rotate: -90deg;
+          scale: 0.6;
+        }
+      }
+
+      /* grid de uma linha indo de 0fr a 1fr: anima ate a altura real,
+         sem precisar chutar um max-height */
+      & .main-nav,
+      & .utility-strip {
+        flex-basis: 100%;
+        display: grid;
+        grid-template-rows: 0fr;
+        justify-items: center;
+        opacity: 0;
+        /* tira do Tab enquanto fechado, senao os links seguem focaveis */
+        visibility: hidden;
+        padding: 0;
+
+        /* FECHAR: mais rapido que abrir e com ease-in, para sair de vez.
+           A opacidade termina antes da altura, senao o texto fica
+           visivel sendo espremido nos ultimos quadros. */
+        transition:
+          grid-template-rows 0.24s cubic-bezier(0.4, 0, 1, 1),
+          opacity 0.14s ease-in,
+          visibility 0s linear 0.24s;
+      }
+
+      /* fechando, os icones recolhem primeiro e a lista acompanha */
+      & .main-nav {
+        transition-delay: 0.05s, 0.05s, 0.29s;
+      }
+
+      /* quem recorta e o filho da linha do grid */
+      & .main-nav > .nav-links,
+      & .utility-strip > .social {
+        overflow: hidden;
+        min-height: 0;
+      }
+
+      & .main-nav > .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1.2rem 1.6rem;
+        padding: 1.6rem 0 0;
+      }
+
+      & .utility-strip > .social {
+        gap: 1.6rem;
+        padding: 0;
+        transition: padding 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+        & i {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* ---------- estado aberto ---------- */
+      &.menu-aberto {
+        /* ABRIR: mais longo, ease-out, e a opacidade entra com um
+           respiro depois que a altura ja comecou a crescer */
+        & .main-nav,
+        & .utility-strip {
+          grid-template-rows: 1fr;
+          opacity: 1;
+          justify-content: center;
+          visibility: visible;
+          transition:
+            grid-template-rows 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.26s ease-out 0.06s,
+            visibility 0s;
+        }
+
+        /* abrindo, a lista vem primeiro e os icones entram logo atras */
+        & .utility-strip {
+          transition-delay: 0.06s, 0.12s, 0s;
+        }
+
+        /* o padding fica no filho recortado para crescer junto,
+           em vez de dar um salto quando a classe entra */
+        & .utility-strip > .social {
+          padding: 1.2rem 0 1.6rem;
+        }
+
+        & .btn-menu {
+          & .fa-bars {
+            opacity: 0;
+            rotate: 90deg;
+            scale: 0.6;
+          }
+
+          & .fa-xmark {
+            opacity: 1;
+            rotate: 0deg;
+            scale: 1;
+          }
+        }
+      }
+    }
+
+    /* quem pediu menos animacao no sistema recebe o menu sem animacao */
+    @media (prefers-reduced-motion: reduce) {
+      .header {
+        & .main-nav,
+        & .utility-strip,
+        & .utility-strip > .social,
+        & .btn-menu .fa-bars,
+        & .btn-menu .fa-xmark {
+          transition: none;
+        }
+      }
+    }
+  }
+
   /* ---------- telas muito estreitas (ate 520px) ---------- */
   @media (max-width: 520px) {
     /* palavras longas nao podem estourar a caixa */
@@ -1374,6 +1542,13 @@ footer {
           grid-template-rows: repeat(2, 1fr);
           grid-template-columns: repeat(2, 1fr);
         }
+      }
+    }
+
+    & .lightbox {
+      & .lightbox-fechar {
+        right: 10rem;
+        transform: translatex(-50px);
       }
     }
 

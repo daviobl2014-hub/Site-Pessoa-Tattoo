@@ -148,3 +148,37 @@ cabecalhos.forEach((cabecalho) => {
     cabecalho.classList.toggle('aberto');
   });
 });
+
+/* ================================================================
+   5. MENU HAMBÚRGUER — só existe abaixo de 500px
+   O CSS é quem esconde/mostra; aqui só cuidamos do estado.
+   ================================================================ */
+const btnMenu = document.querySelector('.btn-menu');
+const cabecalho = document.querySelector('.header');
+
+if (btnMenu && cabecalho) {
+  const abrirFechar = (abrir) => {
+    cabecalho.classList.toggle('menu-aberto', abrir);
+    btnMenu.setAttribute('aria-expanded', String(abrir));
+    btnMenu.setAttribute('aria-label', abrir ? 'Fechar menu' : 'Abrir menu');
+  };
+
+  btnMenu.addEventListener('click', () => {
+    abrirFechar(!cabecalho.classList.contains('menu-aberto'));
+  });
+
+  /* clicou num link: o menu já cumpriu o papel */
+  cabecalho.querySelectorAll('.nav-links a').forEach((link) => {
+    link.addEventListener('click', () => abrirFechar(false));
+  });
+
+  document.addEventListener('keydown', (evento) => {
+    if (evento.key === 'Escape') abrirFechar(false);
+  });
+
+  /* voltou para tela larga com o menu aberto: o CSS já mostra tudo,
+     mas a classe sobraria e o ícone ficaria no "X" */
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 500) abrirFechar(false);
+  });
+}

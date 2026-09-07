@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Jost:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" />
   </head>
   <body>
     <!-- ================================================================
@@ -29,7 +30,19 @@
         </div>
       </div>
 
-      <nav class="main-nav">
+      <button
+        class="btn-menu"
+        id="btnMenu"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menuMobile"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <nav class="main-nav" id="menuMobile">
         <div class="nav-links">
           <a href="#inicio" class="active">Home</a>
           <a href="#galeria">Galeria</a>
@@ -123,7 +136,7 @@
               alt="Tatuagem blackwork no braço"
               loading="lazy"
             />
-            <figcaption>Blackwork — braço fechado</figcaption>
+            <figcaption>Blackwork</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="fineline">
@@ -132,7 +145,7 @@
               alt="Tatuagem fineline no antebraço"
               loading="lazy"
             />
-            <figcaption>Fineline — Costas</figcaption>
+            <figcaption>Fineline</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="realismo">
@@ -141,12 +154,12 @@
               alt="Tatuagem realismo preto e cinza"
               loading="lazy"
             />
-            <figcaption>Realismo — preto e cinza</figcaption>
+            <figcaption>Realismo</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="fineline">
             <img src="img/fine3.png" alt="Traço fino floral" loading="lazy" />
-            <figcaption>Fineline — floral</figcaption>
+            <figcaption>Fineline</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="blackwork">
@@ -155,7 +168,7 @@
               alt="Blackwork geométrico na perna"
               loading="lazy"
             />
-            <figcaption>Blackwork — geométrico</figcaption>
+            <figcaption>Blackwork</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="realismo">
@@ -164,12 +177,12 @@
               alt="Retrato realista no braço"
               loading="lazy"
             />
-            <figcaption>Realismo — retrato</figcaption>
+            <figcaption>Realismo</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="blackwork">
             <img src="img/black4.png" alt="Blackwork oriental" loading="lazy" />
-            <figcaption>Blackwork — oriental</figcaption>
+            <figcaption>Blackwork</figcaption>
           </figure>
           <figure class="g-item" data-cat="realismo">
             <img
@@ -177,17 +190,17 @@
               alt="Retrato realista no braço"
               loading="lazy"
             />
-            <figcaption>Realismo — retrato</figcaption>
+            <figcaption>Realismo</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="fineline">
             <img src="img/fine2.png" alt="Traço fino floral" loading="lazy" />
-            <figcaption>Fineline — Braço</figcaption>
+            <figcaption>Fineline</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="blackwork">
             <img src="img/black3.png" alt="Blackwork oriental" loading="lazy" />
-            <figcaption>Blackwork — oriental</figcaption>
+            <figcaption>Blackwork</figcaption>
           </figure>
           <figure class="g-item" data-cat="realismo">
             <img
@@ -195,7 +208,7 @@
               alt="Retrato realista no braço"
               loading="lazy"
             />
-            <figcaption>Realismo — retrato</figcaption>
+            <figcaption>Realismo</figcaption>
           </figure>
 
           <figure class="g-item" data-cat="fineline">
@@ -204,7 +217,7 @@
               alt="Traço fino Borboleta"
               loading="lazy"
             />
-            <figcaption>Fineline — Borboleta</figcaption>
+            <figcaption>Fineline</figcaption>
           </figure>
         </div>
 
@@ -231,21 +244,21 @@
         <div class="funciona">
           <h3>Atendimento</h3>
           <div class="bloco-1">
-            <div class="bola">1</div>
+            <!-- <div class="bola">1</div> -->
             <h4>Ideia</h4>
             <div class="linha-hor"></div>
             <p>Você traz a sua ideia e conversamos sobre o projeto.</p>
           </div>
 
           <div class="bloco-2">
-            <div class="bola">2</div>
+            <!-- <div class="bola">2</div> -->
             <h4>Projeto</h4>
             <div class="linha-hor"></div>
             <p>Desenvolvemos um desenho exclusivo para você.</p>
           </div>
 
           <div class="bloco-3">
-            <div class="bola">3</div>
+            <!-- <div class="bola">3</div> -->
             <h4>Tattoo</h4>
             <div class="linha-hor"></div>
             <p>Com técnica, segurança e qualidade, transformamos em arte.</p>
@@ -261,55 +274,62 @@
       <div class="fio"></div>
       <div class="acordeao">
         <div class="item-acordeao">
-          <div class="cabecalho-item">Os cursos têm certificado?</div>
+          <div class="cabecalho-item">Quanto custa?</div>
           <div class="corpo-item">
-            Tem, sim! Todos os cursos da Hashtag geram certificado de conclusão,
-            assinado pela Hashtag, comprovando todo o conteúdo que você aprendeu
-            no treinamento, assim como a carga horária do curso.
+            Depende de tamanho, detalhe, cor e região do corpo. O orçamento sai
+            depois que você manda a referência e o local. Não passamos preço
+            "por centímetro" no automático.
           </div>
         </div>
 
         <div class="item-acordeao">
           <div class="cabecalho-item aberto">
-            Poderia falar um pouco mais sobre os cursos?
+            Quanto tempo leva para cicatrizar?
           </div>
           <div class="corpo-item">
-            Primeiro, importante falar que todos os cursos, sem exceção, são do
-            básico ao impressionador, então vão te mostrar tudo o que você
-            precisa saber da ferramenta pra se destacar com ela.‍
+            A pele fecha em 7 a 15 dias. A cicatrização profunda leva de 30 a 60
+            dias — é nesse período que a cor assenta.
+          </div>
+        </div>
+
+        <div class="item-acordeao">
+          <div class="cabecalho-item aberto">Quais os cuidados depois?</div>
+          <div class="corpo-item">
+            Lavar com água e sabão neutro, secar sem esfregar, pomada em camada
+            fina 2 a 3 vezes ao dia. Não coçar, não arrancar casca, não usar
+            roupa apertada em cima.
           </div>
         </div>
 
         <div class="item-acordeao">
           <div class="cabecalho-item aberto">
-            Poderia falar um pouco mais sobre os cursos?
+            Posso pegar sol, praia ou piscina?
           </div>
           <div class="corpo-item">
-            Primeiro, importante falar que todos os cursos, sem exceção, são do
-            básico ao impressionador, então vão te mostrar tudo o que você
-            precisa saber da ferramenta pra se destacar com ela.‍
+            Não durante a cicatrização (mínimo 30 dias). Depois, sempre protetor
+            solar — sol é o que mais desbota tatuagem.
           </div>
         </div>
 
         <div class="item-acordeao">
           <div class="cabecalho-item aberto">
-            Poderia falar um pouco mais sobre os cursos?
+            Preciso de retoque? É cobrado?
           </div>
           <div class="corpo-item">
-            Primeiro, importante falar que todos os cursos, sem exceção, são do
-            básico ao impressionador, então vão te mostrar tudo o que você
-            precisa saber da ferramenta pra se destacar com ela.‍
+            Alguns pontos podem falhar na cicatrização, é normal. O primeiro
+            retoque é gratuito dentro de 30 dias, desde que os cuidados tenham
+            sido seguidos.
           </div>
         </div>
 
         <div class="item-acordeao">
           <div class="cabecalho-item aberto">
-            Poderia falar um pouco mais sobre os cursos?
+            Dá para tatuar em cima de cicatriz, estria ou tatuagem antiga?
           </div>
           <div class="corpo-item">
-            Primeiro, importante falar que todos os cursos, sem exceção, são do
-            básico ao impressionador, então vão te mostrar tudo o que você
-            precisa saber da ferramenta pra se destacar com ela.‍
+            Na maioria dos casos sim. Cicatriz precisa ter no mínimo 1 ano e ser
+            avaliada presencialmente. Cobertura depende do tamanho e da cor da
+            tatuagem antiga.
           </div>
         </div>
       </div>
