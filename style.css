@@ -1451,6 +1451,7 @@ footer {
 
       /* ---------- estado aberto ---------- */
       &.menu-aberto {
+        height: auto;
         /* ABRIR: mais longo, ease-out, e a opacidade entra com um
            respiro depois que a altura ja comecou a crescer */
         & .main-nav,
