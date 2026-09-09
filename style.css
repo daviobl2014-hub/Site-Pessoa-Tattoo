@@ -1547,7 +1547,6 @@ footer {
 
     & .lightbox {
       & .lightbox-fechar {
-        right: 10rem;
         transform: translatex(-50px);
       }
     }
