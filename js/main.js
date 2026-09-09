@@ -167,8 +167,9 @@ if (btnMenu && cabecalho) {
     abrirFechar(!cabecalho.classList.contains('menu-aberto'));
   });
 
-  /* clicou num link: o menu já cumpriu o papel */
-  cabecalho.querySelectorAll('.nav-links a').forEach((link) => {
+  /* clicou num link interno (nav ou logo): o menu já cumpriu o papel.
+     as redes sociais ficam de fora: abrem em outra aba */
+  cabecalho.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', () => abrirFechar(false));
   });
 

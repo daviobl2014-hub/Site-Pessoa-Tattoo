@@ -106,7 +106,6 @@ p {
     display: flex;
     align-items: center;
     gap: 2.8rem;
-    cursor: pointer;
 
     & .logo {
       transition: transform 0.3s ease;
@@ -1434,7 +1433,14 @@ footer {
         justify-content: center;
         align-items: center;
         gap: 1.2rem 1.6rem;
-        padding: 1.6rem 0 0;
+        padding: 0 1.6rem;
+
+        /* a logo ja leva ao inicio: o Home viraria um botao repetido.
+           o gancho e o href, nao o .active — quem liga o .active e o
+           scrollspy do JS, entao ele muda de link conforme a rolagem */
+        /* & a[href='#inicio'] {
+          display: none;
+        } */
       }
 
       & .utility-strip > .social {
@@ -1461,13 +1467,13 @@ footer {
           grid-area: 1 / 1 / 2 / 2;
         }
         & .main-nav {
-          grid-area: 1 / 2 / 2 / 3;
+          grid-area: 2 / 1 / 3 / 4;
         }
         & .btn-menu {
           grid-area: 1 / 3 / 2 / 4;
         }
         & .utility-strip {
-          grid-area: 2 / 1 / 3 / 4;
+          grid-area: 1 / 2 / 2 / 3;
         }
 
         /* ABRIR: mais longo, ease-out, e a opacidade entra com um
