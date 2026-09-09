@@ -747,10 +747,10 @@ p {
   margin: 0 auto;
   box-shadow: inset 0 0 10rem 10rem rgba(0, 0, 0, 9);
 
-  .acordeao {
+  & .acordeao {
     padding: 5rem;
 
-    .item-acordeao {
+    & .item-acordeao {
       border-radius: 3.5rem;
       margin: 1.2rem 0;
       box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.2);
@@ -772,7 +772,7 @@ p {
       }
     }
 
-    .cabecalho-item {
+    & .cabecalho-item {
       font-family: var(--font-titulo);
       display: flex;
       justify-content: space-between;
@@ -800,7 +800,7 @@ p {
       }
     }
 
-    .cabecalho-item.aberto + .corpo-item {
+    & .cabecalho-item.aberto + .corpo-item {
       display: block;
     }
   }
@@ -1062,18 +1062,15 @@ footer {
     transform 0.4s ease;
 
   &::before {
+    content: attr(data-tooltip);
     position: absolute;
     right: -100%;
+    bottom: 10%;
     opacity: 0;
     pointer-events: none;
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
-  }
-
-  &::before {
-    content: attr(data-tooltip);
-    bottom: 10%;
     transform: translateX(-50%) translateY(4px);
     background: black;
     border: 1px solid var(--mb-vinho);
@@ -1277,7 +1274,7 @@ footer {
     }
   }
 
-  & .galeria {
+  .galeria {
     & .barra {
       justify-content: center;
       flex-direction: column;
@@ -1512,11 +1509,9 @@ footer {
           }
         }
       }
-    }
 
-    /* quem pediu menos animacao no sistema recebe o menu sem animacao */
-    @media (prefers-reduced-motion: reduce) {
-      .header {
+      /* quem pediu menos animacao no sistema recebe o menu sem animacao */
+      @media (prefers-reduced-motion: reduce) {
         & .main-nav,
         & .utility-strip,
         & .utility-strip > .social,
@@ -1557,7 +1552,7 @@ footer {
       }
     }
 
-    & .lightbox {
+    .lightbox {
       & .lightbox-fechar {
         transform: translatex(-50px);
       }
@@ -1596,7 +1591,9 @@ footer {
   }
 
   /* tooltip nao cabe em tela estreita (e mobile nao tem hover) */
-  .logo-whatssap::before {
-    display: none;
+  .logo-whatssap {
+    &::before {
+      display: none;
+    }
   }
 }
