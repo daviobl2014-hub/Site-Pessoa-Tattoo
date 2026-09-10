@@ -1347,6 +1347,63 @@ footer {
       padding: 1.2rem;
       box-shadow: none;
     }
+
+    /* ---------- entrada em sequencia (so no mobile) ----------
+       aqui a hero e uma coluna unica, entao da pra mostrar um item
+       de cada vez seguindo o mesmo order de 1 a 5 definido acima:
+       imagem pessoa > lucas > imagem tatoo > texto > texto > local.
+
+       as tres imagens descem de cima igual ao header (slide-in-top),
+       os textos mantem o text-focus-in e so mudam de horario, e o
+       "Petropolis - RJ" fecha a sequencia por ultimo. */
+
+    /* a hero inteira nao pode mais aparecer de uma vez, senao ela
+       mascararia a sequencia dos filhos.
+       precisa do &.fade-in-bottom: a classe utilitaria e declarada
+       mais pra frente no arquivo e, com a mesma especificidade,
+       venceria por vir depois */
+    &.fade-in-bottom {
+      animation: none;
+    }
+
+    & .pessoa-img > img,
+    & .lucas-img,
+    & .tatoo-img > img {
+      animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    & .pessoa-img > img {
+      animation-delay: 0.5s;
+    }
+
+    & .lucas-img {
+      animation-delay: 0.9s;
+    }
+
+    & .tatoo-img > img {
+      animation-delay: 1.3s;
+    }
+
+    /* os textos ja tem .text-focus-in no html: aqui so entram na fila */
+    & .pessoa-img > .texto-hero {
+      animation-delay: 1.7s;
+    }
+
+    & .tatoo-img > .texto-hero {
+      animation-delay: 2.1s;
+    }
+
+    & .local {
+      animation-delay: 2.5s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      & .pessoa-img > img,
+      & .lucas-img,
+      & .tatoo-img > img {
+        animation: none;
+      }
+    }
   }
 
   .galeria {
