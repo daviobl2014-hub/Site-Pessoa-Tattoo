@@ -183,3 +183,50 @@ if (btnMenu && cabecalho) {
     if (window.innerWidth > 500) abrirFechar(false);
   });
 }
+
+/* ============================================================
+   ANIMACOES NA ROLAGEM
+   antes as animacoes rodavam todas no load do site, entao quem
+   chegava na galeria ou nas duvidas ja encontrava tudo parado.
+   agora cada secao so solta a sua animacao na primeira vez que
+   aparece na tela.
+
+   o CSS deixa tudo com animation-play-state: paused; aqui a
+   gente so tira a pausa adicionando .na-tela na secao.
+   ============================================================ */
+const secoesAnimadas = document.querySelectorAll('section');
+
+if (secoesAnimadas.length) {
+  /* avisa o css que o js esta no ar: sem essa classe nada fica
+     pausado, entao se o script falhar o site aparece do mesmo jeito */
+  document.documentElement.classList.add('js-anima');
+
+  const semMovimento = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (semMovimento || !('IntersectionObserver' in window)) {
+    /* navegador antigo ou usuario que pediu menos movimento:
+       libera tudo de uma vez */
+    secoesAnimadas.forEach((secao) => secao.classList.add('na-tela'));
+  } else {
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        entradas.forEach((entrada) => {
+          if (!entrada.isIntersecting) return;
+          entrada.target.classList.add('na-tela');
+          /* animacao de entrada e so na primeira vez: para de observar */
+          observador.unobserve(entrada.target);
+        });
+      },
+      {
+        /* dispara quando ~15% da secao aparece, tirando 10% da
+           borda de baixo pra nao acionar cedo demais */
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px',
+      }
+    );
+
+    secoesAnimadas.forEach((secao) => observador.observe(secao));
+  }
+}
