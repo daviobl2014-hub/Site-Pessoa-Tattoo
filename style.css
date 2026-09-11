@@ -232,7 +232,8 @@ p {
   scroll-margin-top: 5rem;
   min-height: 90vh;
   position: relative;
-  background-image: var(--costura), var(--escurecer), url(img/hero.png);
+  max-width: 150rem;
+  background-image: var(--costura), var(--escurecer), url(img/hero.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -345,7 +346,7 @@ p {
    ================================================================ */
 
 .galeria {
-  background-image: var(--costura), var(--escurecer), url(img/FUMACA.png);
+  background-image: var(--costura), var(--escurecer), url(img/FUMACA.webp);
   background-size: cover;
   background-repeat: no-repeat;
   scroll-margin-top: 5rem;
@@ -686,7 +687,7 @@ p {
    ================================================================ */
 
 .sobre {
-  background-image: var(--costura), var(--escurecer), url(img/FUNDO-PEDRA.png);
+  background-image: var(--costura), var(--escurecer), url(img/FUNDO-PEDRA.webp);
   background-size: cover;
   scroll-margin-top: 5rem;
   background-repeat: no-repeat;
@@ -794,7 +795,7 @@ p {
 
 .duvidas {
   scroll-margin-top: 5rem;
-  background-image: var(--costura), var(--escurecer), url(img/duvidas.png);
+  background-image: var(--costura), var(--escurecer), url(img/duvidas.webp);
   background-repeat: no-repeat;
   padding: 9rem 4rem;
   max-width: 150rem;
@@ -897,7 +898,7 @@ p {
   align-items: center;
   flex-flow: column;
   margin: 0 auto;
-  background-image: var(--costura), var(--escurecer), url(img/tatoo-fundo.png);
+  background-image: var(--costura), var(--escurecer), url(img/tatoo-fundo.webp);
   background-size: cover;
   background-repeat: no-repeat;
   scroll-margin-top: 5rem;
@@ -988,7 +989,7 @@ p {
    ================================================================ */
 
 .endereco {
-  background-image: var(--costura), var(--escurecer), url(img/estatua.png);
+  background-image: var(--costura), var(--escurecer), url(img/estatua.webp);
   background-size: cover;
   background-repeat: no-repeat;
   scroll-margin-top: 5rem;
