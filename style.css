@@ -1180,8 +1180,6 @@ footer {
    ================================================================ */
 
 @media (max-width: 900px) {
-  /* o header era uma linha unica sem quebra: logo + 6 links + 3 icones
-     somavam ~499px de largura minima e estouravam a tela */
   .header {
     flex-wrap: wrap;
     justify-content: center;
@@ -1211,7 +1209,6 @@ footer {
     }
   }
 
-  /* vinheta interna mais suave: 10rem de spread comia ~200px numa tela estreita */
   .hero,
   .galeria,
   .sobre,
@@ -1221,7 +1218,6 @@ footer {
     box-shadow: inset 0 0 4rem 2rem rgba(0, 0, 0, 0.9);
   }
 
-  /* respiro lateral proporcional a tela pequena */
   .galeria,
   .duvidas,
   .contato,
@@ -1231,11 +1227,10 @@ footer {
   }
 
   .hero {
-    /* o layout de 3 colunas com margens negativas e texto em position:absolute
-       so funciona lado a lado; aqui vira uma coluna unica no fluxo normal */
     min-height: auto;
     justify-content: center;
     padding: 3rem 1.5rem 0;
+    background-position: left;
 
     & .container-hero {
       display: flex;
@@ -1247,8 +1242,6 @@ footer {
       margin: 0;
     }
 
-    /* display:contents dissolve o wrapper: a imagem e o .texto-hero viram
-       itens diretos do .container-hero, e so assim o order alcanca os dois */
     & .pessoa-img,
     & .tatoo-img {
       display: contents;
@@ -1274,7 +1267,6 @@ footer {
       order: 5;
     }
 
-    /* as faixas pessoa.png (1140x397) e tatoo.png (1016x399) sao horizontais */
     & .pessoa-img > img,
     & .tatoo-img > img {
       width: 100%;
@@ -1283,7 +1275,6 @@ footer {
       margin: 0;
     }
 
-    /* a foto e retrato (1122x1402), entao pede menos largura */
     & .lucas-img {
       position: static;
       width: 100%;
@@ -1292,7 +1283,6 @@ footer {
       margin: 0;
     }
 
-    /* tirar o absolute e o que resolve o texto "solto" dentro da imagem */
     & .texto-hero {
       position: static;
       display: flex;
@@ -1320,9 +1310,6 @@ footer {
       }
     }
 
-    /* estas duas precisam de 3 classes: as regras do desktop
-       (.hero .pessoa-img .texto-hero) tem especificidade maior que
-       .hero .texto-hero e venceriam mesmo dentro da media query */
     & .pessoa-img .texto-hero {
       text-align: center;
       padding-left: 0;
@@ -1339,8 +1326,6 @@ footer {
       align-items: center;
     }
 
-    /* sai do absolute para cair no fluxo, depois do botao;
-       as margens negativas devolvem a faixa preta de ponta a ponta */
     & .local {
       position: static;
       align-self: stretch;
@@ -1350,20 +1335,6 @@ footer {
       box-shadow: none;
     }
 
-    /* ---------- entrada em sequencia (so no mobile) ----------
-       aqui a hero e uma coluna unica, entao da pra mostrar um item
-       de cada vez seguindo o mesmo order de 1 a 5 definido acima:
-       imagem pessoa > lucas > imagem tatoo > texto > texto > local.
-
-       as tres imagens descem de cima igual ao header (slide-in-top),
-       os textos mantem o text-focus-in e so mudam de horario, e o
-       "Petropolis - RJ" fecha a sequencia por ultimo. */
-
-    /* a hero inteira nao pode mais aparecer de uma vez, senao ela
-       mascararia a sequencia dos filhos.
-       precisa do &.fade-in-bottom: a classe utilitaria e declarada
-       mais pra frente no arquivo e, com a mesma especificidade,
-       venceria por vir depois */
     &.fade-in-bottom {
       animation: none;
     }
@@ -1371,7 +1342,7 @@ footer {
     & .pessoa-img > img,
     & .lucas-img,
     & .tatoo-img > img {
-      animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: fade-in-fwd 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     }
 
     & .pessoa-img > img {
@@ -1386,7 +1357,6 @@ footer {
       animation-delay: 1.3s;
     }
 
-    /* os textos ja tem .text-focus-in no html: aqui so entram na fila */
     & .pessoa-img > .texto-hero {
       animation-delay: 1.7s;
     }
@@ -1424,9 +1394,10 @@ footer {
       align-items: center;
       width: 100%;
       padding: 2rem 1.5rem;
+      perspective: 800px;
 
       & img {
-        animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s
+        animation: fade-in-fwd 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 1.3s
           both;
         background-size: cover;
         width: 100%;
@@ -1455,6 +1426,7 @@ footer {
   }
 
   .contato {
+    background-position: right;
     & .caixa {
       display: flex;
       flex-direction: column;
@@ -1497,11 +1469,6 @@ footer {
   /* ---------- menu hamburguer (ate 500px) ---------- */
   @media (max-width: 500px) {
     .header {
-      /* o mesmo grid aberto e fechado. trocar de flex para grid no meio
-         do fechamento era o que deixava resto na tela: o header voltava
-         para 6rem num quadro so, enquanto os filhos ainda animavam, e
-         sem overflow:hidden eles apareciam por fora da caixa.
-         linha 1: logo | icones | X. linha 2: a lista de links. */
       display: grid;
       grid-template-columns: auto 1fr auto;
       grid-template-rows: auto auto;
@@ -1510,8 +1477,6 @@ footer {
       row-gap: 0;
       padding: 0 1.5rem;
 
-      /* a altura vem do logo (6rem) na linha 1; a linha 2 cresce e
-         encolhe sozinha, e o header acompanha animando junto */
       & .nav-left {
         grid-area: 1 / 1 / 2 / 2;
       }
@@ -1522,8 +1487,6 @@ footer {
         grid-area: 2 / 1 / 3 / 4;
       }
 
-      /* o X fecha a linha 1; os dois glifos ficam empilhados na mesma
-         celula do proprio grid dele, para poder cruzar um com o outro */
       & .btn-menu {
         grid-area: 1 / 3 / 2 / 4;
         display: grid;
@@ -1548,34 +1511,19 @@ footer {
         }
       }
 
-      /* grid de uma linha indo de 0fr a 1fr: anima ate a altura real,
-         sem precisar chutar um max-height */
       & .main-nav,
       & .utility-strip {
         display: grid;
-        /* fica nos DOIS estados de proposito. so no .menu-aberto, o
-           justify-self voltava para stretch assim que a classe saia:
-           a faixa esticava para as 3 colunas no primeiro quadro do
-           fechamento, os links re-quebravam e o bloco parecia pular
-           para a esquerda antes de recolher. place-self nao interpola,
-           entao a unica saida e ele nunca mudar. */
+
         place-self: center;
         grid-template-rows: 0fr;
         justify-items: center;
         opacity: 0;
-        /* tira do Tab enquanto fechado, senao os links seguem focaveis */
+
         visibility: hidden;
         padding: 0;
       }
 
-      /* FECHAR de baixo para cima: a lista (linha 2) recolhe primeiro e
-         os icones (linha 1) saem logo atras. mais rapido que abrir e com
-         ease-in, para sair de vez. A opacidade termina antes da altura,
-         senao o texto fica visivel sendo espremido nos ultimos quadros.
-         O visibility espera o fim dos dois — por isso a transicao vai
-         escrita inteira em cada um, e nao com transition-delay solto:
-         a lista de delays reescreve TODOS os atrasos, inclusive o do
-         visibility, e o elemento sumia de uma vez no meio do fade. */
       & .main-nav {
         transition:
           grid-template-rows 0.24s cubic-bezier(0.4, 0, 1, 1) 0s,
@@ -1590,7 +1538,6 @@ footer {
           visibility 0s linear 0.3s;
       }
 
-      /* quem recorta e o filho da linha do grid */
       & .main-nav > .nav-links,
       & .utility-strip > .social {
         overflow: hidden;
@@ -1604,10 +1551,6 @@ footer {
         align-items: center;
         gap: 1.2rem 1.6rem;
         padding: 0 1.6rem;
-
-        /* a logo ja leva ao inicio: o Home viraria um botao repetido.
-           o gancho e o href, nao o .active — quem liga o .active e o
-           scrollspy do JS, entao ele muda de link conforme a rolagem */
 
         & a[href='#inicio'] {
           display: none;
@@ -1624,13 +1567,7 @@ footer {
         }
       }
 
-      /* ---------- estado aberto ----------
-         o grid ja esta montado la em cima: aqui so as linhas ganham
-         altura, e por isso abrir e fechar usam o mesmo caminho */
       &.menu-aberto {
-        /* ABRIR de cima para baixo, o inverso do fechar: mais longo,
-           ease-out, e a opacidade entra com um respiro depois que a
-           altura ja comecou a crescer */
         & .main-nav,
         & .utility-strip {
           grid-template-rows: 1fr;
@@ -1652,8 +1589,6 @@ footer {
             visibility 0s;
         }
 
-        /* o padding fica no filho recortado para crescer junto,
-           em vez de dar um salto quando a classe entra */
         & .utility-strip > .social {
           padding: 1.2rem 0 1.6rem;
         }
@@ -1673,7 +1608,6 @@ footer {
         }
       }
 
-      /* quem pediu menos animacao no sistema recebe o menu sem animacao */
       @media (prefers-reduced-motion: reduce) {
         & .main-nav,
         & .utility-strip,
@@ -1688,7 +1622,6 @@ footer {
 
   /* ---------- telas muito estreitas (ate 520px) ---------- */
   @media (max-width: 520px) {
-    /* palavras longas nao podem estourar a caixa */
     h1,
     h2,
     h3,
@@ -1698,7 +1631,6 @@ footer {
       overflow-wrap: break-word;
     }
 
-    /* o clamp tinha piso de 4.2rem: "TRABALHOS NA PELE" nao cabia em 260px */
     h2 {
       font-size: clamp(2.4rem, 9vw, 4.2rem);
     }
@@ -1727,7 +1659,6 @@ footer {
       }
     }
 
-    /* acordeao: 5rem + 3.2rem de padding sobravam ~16px de texto */
     .duvidas {
       & .acordeao {
         padding: 2rem 0;
@@ -1744,7 +1675,6 @@ footer {
       }
     }
 
-    /* botao flutuante mais discreto e mais perto do canto */
     .logo-whatssap {
       right: 1.5rem;
       bottom: 2rem;
@@ -1753,7 +1683,6 @@ footer {
     }
   }
 
-  /* tooltip nao cabe em tela estreita (e mobile nao tem hover) */
   .logo-whatssap {
     &::before {
       display: none;
@@ -1919,6 +1848,19 @@ footer {
     transform: scaleY(1);
     -webkit-transform-origin: 100% 0%;
     transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
