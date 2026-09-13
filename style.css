@@ -436,6 +436,15 @@
         display: none;
       }
 
+      /* celular baixa a versao -mobile (index.html); o <picture> nao vira
+         caixa, entao a img continua ocupando o card inteiro */
+      & picture {
+        display: contents;
+      }
+      & source {
+        display: none;
+      }
+
       & img {
         width: 100%;
         height: 100%;
