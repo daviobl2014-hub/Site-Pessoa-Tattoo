@@ -58,7 +58,8 @@
     min-height: auto;
     justify-content: center;
     padding: 3rem 1.5rem 0;
-    background-position: left;
+    background-image:
+      var(--costura), var(--escurecer), url(img/hero-mobile.webp);
 
     & .container-hero {
       display: flex;
