@@ -48,8 +48,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- cada tela baixa so o fundo que vai usar (mobile usa hero-mobile, ver style-900.css) -->
-    <link rel="preload" as="image" href="img/hero.webp" media="(min-width: 901px)" fetchpriority="high" />
-    <link rel="preload" as="image" href="img/hero-mobile.webp" media="(max-width: 900px)" fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      href="img/hero.webp"
+      media="(min-width: 901px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="img/hero-mobile.webp"
+      media="(max-width: 900px)"
+      fetchpriority="high"
+    />
 
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="style.css" />
@@ -64,10 +76,13 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap"
+        rel="stylesheet"
+      />
     </noscript>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
@@ -118,7 +133,7 @@
           }
         ]
       }
-    </script aria-label="Instagram da Pessôa Tattoo">
+    </script>
   </head>
   <body>
     <!-- ================================================================
@@ -134,7 +149,7 @@
               src="img/logo.webp"
               width="120"
               height="180"
-              alt="logo pessoa-tatoo"
+              alt="logo pessôa-tattoo"
             />
           </div>
         </a>
@@ -168,561 +183,583 @@
           <a
             href="https://www.instagram.com/pessoalucastattoo?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
             target="_blank"
-            aria-label="Instagram da Pessôa Tattoo"
+            aria-label="Instagram de Pessôa Tattoo"
           >
-            <i class="fa-brands fa-instagram icone icone-instagram" aria-hidden="true"></i>
+            <i
+              class="fa-brands fa-instagram icone icone-instagram"
+              aria-hidden="true"
+            ></i>
           </a>
 
           <a
             href="https://www.tiktok.com/@pessoalucas?_r=1&_t=ZS-999gOnDMJyp"
             target="_blank"
-            aria-label="TikTok da Pessôa Tattoo"
+            aria-label="TikTok de Pessôa Tattoo"
           >
-            <i class="fa-brands fa-tiktok icone icone-tiktok" aria-hidden="true"></i>
+            <i
+              class="fa-brands fa-tiktok icone icone-tiktok"
+              aria-hidden="true"
+            ></i>
           </a>
 
           <a
             href="https://www.facebook.com/pessoaartetattoo"
             target="_blank"
-            aria-label="Facebook da Pessôa Tattoo"
+            aria-label="Facebook de Pessôa Tattoo"
           >
-            <i class="fa-brands fa-facebook icone icone-facebook" aria-hidden="true"></i>
+            <i
+              class="fa-brands fa-facebook icone icone-facebook"
+              aria-hidden="true"
+            ></i>
           </a>
         </span>
       </div>
     </header>
 
     <main>
-    <!-- ================================================================
+      <!-- ================================================================
        HOME 
        ================================================================ -->
-    <section class="hero fade-in-bottom" id="inicio">
-      <div class="container-hero">
-        <div class="pessoa-img">
-          <!-- telas ate 900px baixam a versao -mobile (menor); desktop segue igual -->
+      <section class="hero fade-in-bottom" id="inicio">
+        <div class="container-hero">
+          <div class="pessoa-img">
+            <!-- telas ate 900px baixam a versao -mobile (menor); desktop segue igual -->
+            <picture>
+              <source
+                media="(max-width: 900px)"
+                srcset="img/pessoa-mobile.webp"
+                width="798"
+                height="277"
+              />
+              <img
+                src="img/pessoa.webp"
+                width="1140"
+                height="397"
+                alt="nome Pessôa"
+              />
+            </picture>
+            <div class="texto-hero text-focus-in">
+              <h1>Tatuagem fineline e blackwork</h1>
+              <div class="fio"></div>
+              <p>
+                Do rascunho à cicatrização, a Pessôa Tattoo cuida de cada etapa
+                do seu projeto.
+              </p>
+            </div>
+          </div>
+          <div class="lucas-img">
+            <picture>
+              <source
+                media="(max-width: 900px)"
+                srcset="img/lucas-mobile.webp"
+                width="594"
+                height="743"
+              />
+              <img
+                src="img/lucas.webp"
+                width="1122"
+                height="1402"
+                alt="lucas"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+          <div class="tatoo-img">
+            <picture>
+              <source
+                media="(max-width: 900px)"
+                srcset="img/tattoo-mobile.webp"
+                width="792"
+                height="311"
+              />
+              <img
+                src="img/tatoo.webp"
+                width="1016"
+                height="399"
+                alt="tattoo"
+              />
+            </picture>
+            <div class="texto-hero text-focus-in">
+              <a
+                href="https://wa.me/5524992363035?text=Olá!%20Vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20tatuagem."
+                class="btn"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-whatsapp icone icone-whatsapp"
+                  aria-hidden="true"
+                ></i
+                >Agendar minha Tattoo</a
+              >
+              <p>Atendimento Exclusivo via WhatsApp</p>
+            </div>
+          </div>
+        </div>
+        <div class="local fade-in-bottom">
+          <span> Petrópolis - RJ</span>
+        </div>
+      </section>
+
+      <!-- ================= GALERIA ================= -->
+      <section class="galeria" id="galeria">
+        <h2 class="tracking-in-expand">Galeria</h2>
+        <div class="fio fade-in-bottom"></div>
+
+        <div class="barra text-focus-in">
+          <h3 class="sub">Trabalhos na pele</h3>
+
+          <div class="filtros">
+            <button class="is-ativo" data-filtro="todos">Todos</button>
+            <button data-filtro="blackwork">Blackwork</button>
+            <button data-filtro="fineline">Fineline</button>
+            <button data-filtro="realismo">Realismo</button>
+          </div>
+        </div>
+
+        <div class="carrossel">
+          <button class="seta prev" aria-label="Imagem anterior">
+            &#8249;
+          </button>
+
+          <div class="trilho">
+            <figure class="g-item" data-cat="blackwork">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/black1-mobile.webp"
+                  width="542"
+                  height="725"
+                />
+                <img
+                  src="img/black1.webp"
+                  width="1085"
+                  height="1450"
+                  alt="Tatuagem blackwork no braço"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Blackwork</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="fineline">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/fine1-mobile.webp"
+                  width="470"
+                  height="836"
+                />
+                <img
+                  src="img/fine1.webp"
+                  width="941"
+                  height="1672"
+                  alt="Tatuagem fineline no antebraço"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Fineline</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="realismo">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/realismo1-mobile.webp"
+                  width="470"
+                  height="836"
+                />
+                <img
+                  src="img/realismo1.webp"
+                  width="941"
+                  height="1672"
+                  alt="Tatuagem realismo preto e cinza"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Realismo</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="fineline">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/fine3-mobile.webp"
+                  width="571"
+                  height="688"
+                />
+                <img
+                  src="img/fine3.webp"
+                  width="1143"
+                  height="1376"
+                  alt="Traço fino floral"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Fineline</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="blackwork">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/black2-mobile.webp"
+                  width="561"
+                  height="701"
+                />
+                <img
+                  src="img/black2.webp"
+                  width="1122"
+                  height="1402"
+                  alt="Blackwork geométrico na perna"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Blackwork</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="realismo">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/realismo2-mobile.webp"
+                  width="573"
+                  height="686"
+                />
+                <img
+                  src="img/realismo2.webp"
+                  width="1146"
+                  height="1372"
+                  alt="Retrato realista no braço"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Realismo</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="blackwork">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/black4-mobile.webp"
+                  width="568"
+                  height="691"
+                />
+                <img
+                  src="img/black4.webp"
+                  width="1137"
+                  height="1383"
+                  alt="Blackwork oriental"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Blackwork</figcaption>
+            </figure>
+            <figure class="g-item" data-cat="realismo">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/realismo3-mobile.webp"
+                  width="542"
+                  height="725"
+                />
+                <img
+                  src="img/realismo3.webp"
+                  width="1084"
+                  height="1451"
+                  alt="Retrato realista no braço"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Realismo</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="fineline">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/fine2-mobile.webp"
+                  width="470"
+                  height="836"
+                />
+                <img
+                  src="img/fine2.webp"
+                  width="941"
+                  height="1672"
+                  alt="Traço fino floral"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Fineline</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="blackwork">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/black3-mobile.webp"
+                  width="566"
+                  height="695"
+                />
+                <img
+                  src="img/black3.webp"
+                  width="1132"
+                  height="1390"
+                  alt="Blackwork oriental"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Blackwork</figcaption>
+            </figure>
+            <figure class="g-item" data-cat="realismo">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/realismo4-mobile.webp"
+                  width="569"
+                  height="690"
+                />
+                <img
+                  src="img/realismo4.webp"
+                  width="1139"
+                  height="1381"
+                  alt="Retrato realista no braço"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Realismo</figcaption>
+            </figure>
+
+            <figure class="g-item" data-cat="fineline">
+              <picture>
+                <source
+                  media="(max-width: 900px)"
+                  srcset="img/fine4-mobile.webp"
+                  width="561"
+                  height="701"
+                />
+                <img
+                  src="img/fine4.webp"
+                  width="1122"
+                  height="1402"
+                  alt="Traço fino Borboleta"
+                  loading="lazy"
+                />
+              </picture>
+              <figcaption>Fineline</figcaption>
+            </figure>
+          </div>
+
+          <button class="seta next" aria-label="Próxima imagem">&#8250;</button>
+        </div>
+      </section>
+
+      <!-- ================= SOBRE ================= -->
+
+      <section class="sobre" id="sobre">
+        <h2 class="tracking-in-expand">Sobre</h2>
+        <div class="fio fade-in-bottom"></div>
+        <div class="container-sobre">
           <picture>
             <source
               media="(max-width: 900px)"
-              srcset="img/pessoa-mobile.webp"
-              width="798"
-              height="277"
+              srcset="img/lucas-tattoo-mobile.webp"
+              width="403"
+              height="419"
             />
             <img
-              src="img/pessoa.webp"
-              width="1140"
-              height="397"
-              alt="nome Pessôa"
+              src="img/lucas-tattoo.webp"
+              width="824"
+              height="857"
+              class="fade-in-left"
+              alt="tatuador lucas Pessôa"
+              loading="lazy"
             />
           </picture>
-          <div class="texto-hero text-focus-in">
-            <h1>Tatuagem fineline e blackwork</h1>
-            <div class="fio"></div>
+          <div class="artista text-focus-in">
+            <h2>Lucas</h2>
             <p>
-              Do rascunho à cicatrização, a Pessôa Tattoo cuida de cada etapa do
-              seu projeto.
+              Tatuador desde 2017, sou apaixonado por transformar ideias em arte
+              através da tatuagem. Tenho como principal referência o estilo Fine
+              Line, conhecido pela delicadeza, precisão e riqueza nos detalhes,
+              mas também trabalho com diferentes estilos, como Blackwork e
+              Realismo. Para mim, cada tatuagem é única. Busco entender a ideia
+              de cada cliente e transformar sua história, personalidade e
+              referências em um trabalho feito para durar.
             </p>
           </div>
+
+          <div class="funciona text-focus-in">
+            <h3>Atendimento</h3>
+            <div class="bloco-1">
+              <!-- <div class="bola">1</div> -->
+              <h4>Ideia</h4>
+              <div class="linha-hor"></div>
+              <p>Você traz a sua ideia e conversamos sobre o projeto.</p>
+            </div>
+
+            <div class="bloco-2">
+              <!-- <div class="bola">2</div> -->
+              <h4>Projeto</h4>
+              <div class="linha-hor"></div>
+              <p>Desenvolvemos um desenho exclusivo para você.</p>
+            </div>
+
+            <div class="bloco-3">
+              <!-- <div class="bola">3</div> -->
+              <h4>Tattoo</h4>
+              <div class="linha-hor"></div>
+              <p>Com técnica, segurança e qualidade, transformamos em arte.</p>
+            </div>
+          </div>
         </div>
-        <div class="lucas-img">
-          <picture>
-            <source
-              media="(max-width: 900px)"
-              srcset="img/lucas-mobile.webp"
-              width="594"
-              height="743"
-            />
-            <img
-              src="img/lucas.webp"
-              width="1122"
-              height="1402"
-              alt="lucas"
-              fetchpriority="high"
-            />
-          </picture>
+      </section>
+
+      <!-- ================= DUVIDAS ================= -->
+
+      <section class="duvidas" id="duvidas">
+        <h2 class="tracking-in-expand">Dúvidas</h2>
+        <div class="fio fade-in-bottom"></div>
+        <div class="acordeao">
+          <div class="item-acordeao">
+            <div class="cabecalho-item">Quanto custa?</div>
+            <div class="corpo-item">
+              Depende de tamanho, detalhe, cor e região do corpo. O orçamento
+              sai depois que você manda a referência e o local. Não passamos
+              preço "por centímetro" no automático.
+            </div>
+          </div>
+
+          <div class="item-acordeao">
+            <div class="cabecalho-item">Quanto tempo leva para cicatrizar?</div>
+            <div class="corpo-item">
+              A pele fecha em 7 a 15 dias. A cicatrização profunda leva de 30 a
+              60 dias — é nesse período que a cor assenta.
+            </div>
+          </div>
+
+          <div class="item-acordeao">
+            <div class="cabecalho-item">Quais os cuidados depois?</div>
+            <div class="corpo-item">
+              Lavar com água e sabão neutro, secar sem esfregar, passar creme
+              nivea 3 ou mais vezes ao dia. Não coçar, não arrancar casca, não
+              usar roupa apertada em cima.
+            </div>
+          </div>
+
+          <div class="item-acordeao">
+            <div class="cabecalho-item">Posso pegar sol, praia ou piscina?</div>
+            <div class="corpo-item">
+              Não durante a cicatrização (mínimo 30 dias). Depois, sempre
+              protetor solar — sol é o que mais desbota tatuagem.
+            </div>
+          </div>
+
+          <div class="item-acordeao">
+            <div class="cabecalho-item">Preciso de retoque? É cobrado?</div>
+            <div class="corpo-item">
+              Alguns pontos podem falhar na cicatrização, é normal. O primeiro
+              retoque é gratuito dentro de 30 dias, desde que os cuidados tenham
+              sido seguidos.
+            </div>
+          </div>
+
+          <div class="item-acordeao">
+            <div class="cabecalho-item">
+              Dá para tatuar em cima de cicatriz, estria ou tatuagem antiga?
+            </div>
+            <div class="corpo-item">
+              Na maioria dos casos sim. Cicatriz precisa ter no mínimo 1 ano e
+              ser avaliada presencialmente. Cobertura depende do tamanho e da
+              cor da tatuagem antiga.
+            </div>
+          </div>
         </div>
-        <div class="tatoo-img">
-          <picture>
-            <source
-              media="(max-width: 900px)"
-              srcset="img/tattoo-mobile.webp"
-              width="792"
-              height="311"
-            />
-            <img src="img/tatoo.webp" width="1016" height="399" alt="tattoo" />
-          </picture>
-          <div class="texto-hero text-focus-in">
+      </section>
+
+      <!-- ================= CONTATO ================= -->
+      <section class="contato" id="contato">
+        <h2 class="tracking-in-expand">Contato</h2>
+        <div class="fio fade-in-bottom"></div>
+
+        <div class="caixa text-focus-in">
+          <div class="titulo">
+            <h3>Vamos criar algo único!</h3>
+            <p>Sua ideia, Minha arte, Pra Sempre!</p>
+          </div>
+
+          <div class="telefone">
+            <div class="logo-tel">
+              <span class="tel" role="img" aria-label="Telefone"></span>
+            </div>
+            <div class="texto">
+              <h3>TELEFONE</h3>
+              <h4>(24) 99236-3035</h4>
+            </div>
+          </div>
+
+          <div class="horario">
+            <div class="logo-hor">
+              <span class="hor" role="img" aria-label="Horário"></span>
+            </div>
+            <div class="texto">
+              <h3>HORÁRIO</h3>
+              <h4>Segunda a Sexta: 10h às 18h</h4>
+              <h4>Sabado: 10h às 14h</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ENDEREÇO ================= -->
+
+      <section class="endereco" id="endereco">
+        <h2 class="tracking-in-expand">Endereço</h2>
+        <div class="fio fade-in-bottom"></div>
+
+        <div class="container-end">
+          <div class="bloco-text text-focus-in">
+            <i
+              class="fa-solid fa-map-marker-alt icone icone-marcador"
+              aria-hidden="true"
+            ></i>
+            <h3>Petrópolis - RJ</h3>
+            <p>Atendimento com hora marcada e total privacidade</p>
+
             <a
-              href="https://wa.me/5524992363035?text=Olá!%20Vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20tatuagem."
+              href="https://share.google/mVgV3WxwlAHT42fp2"
               class="btn"
               target="_blank"
-              ><i class="fa-brands fa-whatsapp icone icone-whatsapp" aria-hidden="true"></i>Agendar minha Tattoo</a
-            >
-            <p>Atendimento Exclusivo via WhatsApp</p>
+              >Abrir Google Maps
+              <span> > </span>
+            </a>
           </div>
-        </div>
-      </div>
-      <div class="local fade-in-bottom">
-        <span> Petrópolis - RJ</span>
-      </div>
-    </section>
 
-    <!-- ================= GALERIA ================= -->
-    <section class="galeria" id="galeria">
-      <h2 class="tracking-in-expand">Galeria</h2>
-      <div class="fio fade-in-bottom"></div>
-
-      <div class="barra text-focus-in">
-        <h3 class="sub">Trabalhos na pele</h3>
-
-        <div class="filtros">
-          <button class="is-ativo" data-filtro="todos">Todos</button>
-          <button data-filtro="blackwork">Blackwork</button>
-          <button data-filtro="fineline">Fineline</button>
-          <button data-filtro="realismo">Realismo</button>
-        </div>
-      </div>
-
-      <div class="carrossel">
-        <button class="seta prev" aria-label="Imagem anterior">&#8249;</button>
-
-        <div class="trilho">
-          <figure class="g-item" data-cat="blackwork">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/black1-mobile.webp"
-                width="542"
-                height="725"
-              />
-              <img
-                src="img/black1.webp"
-                width="1085"
-                height="1450"
-                alt="Tatuagem blackwork no braço"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Blackwork</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="fineline">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/fine1-mobile.webp"
-                width="470"
-                height="836"
-              />
-              <img
-                src="img/fine1.webp"
-                width="941"
-                height="1672"
-                alt="Tatuagem fineline no antebraço"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Fineline</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="realismo">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/realismo1-mobile.webp"
-                width="470"
-                height="836"
-              />
-              <img
-                src="img/realismo1.webp"
-                width="941"
-                height="1672"
-                alt="Tatuagem realismo preto e cinza"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Realismo</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="fineline">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/fine3-mobile.webp"
-                width="571"
-                height="688"
-              />
-              <img
-                src="img/fine3.webp"
-                width="1143"
-                height="1376"
-                alt="Traço fino floral"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Fineline</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="blackwork">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/black2-mobile.webp"
-                width="561"
-                height="701"
-              />
-              <img
-                src="img/black2.webp"
-                width="1122"
-                height="1402"
-                alt="Blackwork geométrico na perna"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Blackwork</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="realismo">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/realismo2-mobile.webp"
-                width="573"
-                height="686"
-              />
-              <img
-                src="img/realismo2.webp"
-                width="1146"
-                height="1372"
-                alt="Retrato realista no braço"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Realismo</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="blackwork">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/black4-mobile.webp"
-                width="568"
-                height="691"
-              />
-              <img
-                src="img/black4.webp"
-                width="1137"
-                height="1383"
-                alt="Blackwork oriental"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Blackwork</figcaption>
-          </figure>
-          <figure class="g-item" data-cat="realismo">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/realismo3-mobile.webp"
-                width="542"
-                height="725"
-              />
-              <img
-                src="img/realismo3.webp"
-                width="1084"
-                height="1451"
-                alt="Retrato realista no braço"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Realismo</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="fineline">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/fine2-mobile.webp"
-                width="470"
-                height="836"
-              />
-              <img
-                src="img/fine2.webp"
-                width="941"
-                height="1672"
-                alt="Traço fino floral"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Fineline</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="blackwork">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/black3-mobile.webp"
-                width="566"
-                height="695"
-              />
-              <img
-                src="img/black3.webp"
-                width="1132"
-                height="1390"
-                alt="Blackwork oriental"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Blackwork</figcaption>
-          </figure>
-          <figure class="g-item" data-cat="realismo">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/realismo4-mobile.webp"
-                width="569"
-                height="690"
-              />
-              <img
-                src="img/realismo4.webp"
-                width="1139"
-                height="1381"
-                alt="Retrato realista no braço"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Realismo</figcaption>
-          </figure>
-
-          <figure class="g-item" data-cat="fineline">
-            <picture>
-              <source
-                media="(max-width: 900px)"
-                srcset="img/fine4-mobile.webp"
-                width="561"
-                height="701"
-              />
-              <img
-                src="img/fine4.webp"
-                width="1122"
-                height="1402"
-                alt="Traço fino Borboleta"
-                loading="lazy"
-              />
-            </picture>
-            <figcaption>Fineline</figcaption>
-          </figure>
-        </div>
-
-        <button class="seta next" aria-label="Próxima imagem">&#8250;</button>
-      </div>
-    </section>
-
-    <!-- ================= SOBRE ================= -->
-
-    <section class="sobre" id="sobre">
-      <h2 class="tracking-in-expand">Sobre</h2>
-      <div class="fio fade-in-bottom"></div>
-      <div class="container-sobre">
-        <picture>
-          <source
-            media="(max-width: 900px)"
-            srcset="img/lucas-tattoo-mobile.webp"
-            width="403"
-            height="419"
-          />
           <img
-            src="img/lucas-tattoo.webp"
-            width="824"
-            height="857"
-            class="fade-in-left"
-            alt="tatuador lucas Pessoa"
+            src="img/studio.webp"
+            width="1672"
+            height="941"
+            alt="studio de tatuagem em petropolis"
+            class="fade-in-right"
             loading="lazy"
           />
-        </picture>
-        <div class="artista text-focus-in">
-          <h2>Lucas</h2>
-          <p>
-            Tatuador desde 2017, sou apaixonado por transformar ideias em arte
-            através da tatuagem. Tenho como principal referência o estilo Fine
-            Line, conhecido pela delicadeza, precisão e riqueza nos detalhes,
-            mas também trabalho com diferentes estilos, como Blackwork e
-            Realismo. Para mim, cada tatuagem é única. Busco entender a ideia de
-            cada cliente e transformar sua história, personalidade e referências
-            em um trabalho feito para durar.
-          </p>
-        </div>
 
-        <div class="funciona text-focus-in">
-          <h3>Atendimento</h3>
-          <div class="bloco-1">
-            <!-- <div class="bola">1</div> -->
-            <h4>Ideia</h4>
-            <div class="linha-hor"></div>
-            <p>Você traz a sua ideia e conversamos sobre o projeto.</p>
-          </div>
-
-          <div class="bloco-2">
-            <!-- <div class="bola">2</div> -->
-            <h4>Projeto</h4>
-            <div class="linha-hor"></div>
-            <p>Desenvolvemos um desenho exclusivo para você.</p>
-          </div>
-
-          <div class="bloco-3">
-            <!-- <div class="bola">3</div> -->
-            <h4>Tattoo</h4>
-            <div class="linha-hor"></div>
-            <p>Com técnica, segurança e qualidade, transformamos em arte.</p>
+          <div class="bloco-iframe swing-in-top-fwd">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.76611315311!2d-43.177620399999995!3d-22.512956799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99096333902653%3A0x54922014c6916b09!2sPessoa%20tattoo!5e0!3m2!1spt-BR!2sbr!4v1788444489374!5m2!1spt-BR!2sbr"
+              title="Mapa com a localização do estúdio Pessôa Tattoo"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ================= DUVIDAS ================= -->
-
-    <section class="duvidas" id="duvidas">
-      <h2 class="tracking-in-expand">Dúvidas</h2>
-      <div class="fio fade-in-bottom"></div>
-      <div class="acordeao">
-        <div class="item-acordeao">
-          <div class="cabecalho-item">Quanto custa?</div>
-          <div class="corpo-item">
-            Depende de tamanho, detalhe, cor e região do corpo. O orçamento sai
-            depois que você manda a referência e o local. Não passamos preço
-            "por centímetro" no automático.
-          </div>
-        </div>
-
-        <div class="item-acordeao">
-          <div class="cabecalho-item">Quanto tempo leva para cicatrizar?</div>
-          <div class="corpo-item">
-            A pele fecha em 7 a 15 dias. A cicatrização profunda leva de 30 a 60
-            dias — é nesse período que a cor assenta.
-          </div>
-        </div>
-
-        <div class="item-acordeao">
-          <div class="cabecalho-item">Quais os cuidados depois?</div>
-          <div class="corpo-item">
-            Lavar com água e sabão neutro, secar sem esfregar, passar creme
-            nivea 3 ou mais vezes ao dia. Não coçar, não arrancar casca, não
-            usar roupa apertada em cima.
-          </div>
-        </div>
-
-        <div class="item-acordeao">
-          <div class="cabecalho-item">Posso pegar sol, praia ou piscina?</div>
-          <div class="corpo-item">
-            Não durante a cicatrização (mínimo 30 dias). Depois, sempre protetor
-            solar — sol é o que mais desbota tatuagem.
-          </div>
-        </div>
-
-        <div class="item-acordeao">
-          <div class="cabecalho-item">Preciso de retoque? É cobrado?</div>
-          <div class="corpo-item">
-            Alguns pontos podem falhar na cicatrização, é normal. O primeiro
-            retoque é gratuito dentro de 30 dias, desde que os cuidados tenham
-            sido seguidos.
-          </div>
-        </div>
-
-        <div class="item-acordeao">
-          <div class="cabecalho-item">
-            Dá para tatuar em cima de cicatriz, estria ou tatuagem antiga?
-          </div>
-          <div class="corpo-item">
-            Na maioria dos casos sim. Cicatriz precisa ter no mínimo 1 ano e ser
-            avaliada presencialmente. Cobertura depende do tamanho e da cor da
-            tatuagem antiga.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONTATO ================= -->
-    <section class="contato" id="contato">
-      <h2 class="tracking-in-expand">Contato</h2>
-      <div class="fio fade-in-bottom"></div>
-
-      <div class="caixa text-focus-in">
-        <div class="titulo">
-          <h3>Vamos criar algo único!</h3>
-          <p>Sua ideia, Minha arte, Pra Sempre!</p>
-        </div>
-
-        <div class="telefone">
-          <div class="logo-tel">
-            <span class="tel" role="img" aria-label="Telefone"></span>
-          </div>
-          <div class="texto">
-            <h3>TELEFONE</h3>
-            <h4>(24) 99236-3035</h4>
-          </div>
-        </div>
-
-        <div class="horario">
-          <div class="logo-hor">
-            <span class="hor" role="img" aria-label="Horário"></span>
-          </div>
-          <div class="texto">
-            <h3>HORÁRIO</h3>
-            <h4>Segunda a Sexta: 10h às 18h</h4>
-            <h4>Sabado: 10h às 14h</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= ENDEREÇO ================= -->
-
-    <section class="endereco" id="endereco">
-      <h2 class="tracking-in-expand">Endereço</h2>
-      <div class="fio fade-in-bottom"></div>
-
-      <div class="container-end">
-        <div class="bloco-text text-focus-in">
-          <i class="fa-solid fa-map-marker-alt icone icone-marcador" aria-hidden="true"></i>
-          <h3>Petrópolis - RJ</h3>
-          <p>Atendimento com hora marcada e total privacidade</p>
-
-          <a
-            href="https://share.google/mVgV3WxwlAHT42fp2"
-            class="btn"
-            target="_blank"
-            >Abrir Google Maps
-            <span> > </span>
-          </a>
-        </div>
-
-        <img
-          src="img/studio.webp"
-          width="1672"
-          height="941"
-          alt="studio de tatuagem em petropolis"
-          class="fade-in-right"
-          loading="lazy"
-        />
-
-        <div class="bloco-iframe swing-in-top-fwd">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.76611315311!2d-43.177620399999995!3d-22.512956799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99096333902653%3A0x54922014c6916b09!2sPessoa%20tattoo!5e0!3m2!1spt-BR!2sbr!4v1788444489374!5m2!1spt-BR!2sbr"
-            title="Mapa com a localização do estúdio Pessôa Tattoo"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
+      </section>
     </main>
 
     <!-- ================= RODAPÉ ================= -->
 
     <footer>
-      <p>&copy; Desde 2017 Pessoa Tattoo. Todos os direitos reservados.</p>
+      <p>&copy; Desde 2017 Pessôa Tattoo. Todos os direitos reservados.</p>
     </footer>
 
     <!-- logo whatssap -->
