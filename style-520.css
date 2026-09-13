@@ -1,0 +1,67 @@
+/* ================================================================
+   BREAKPOINT 520px — cobre 501-520 tambem, por isso separado do 500
+   ORDEM IMPORTA: este arquivo depende de vir depois de style.css.
+   media query nao tem especificidade extra — so vence por vir depois.
+   ================================================================ */
+
+@media (max-width: 520px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a {
+    overflow-wrap: break-word;
+  }
+
+  h2 {
+    font-size: clamp(2.4rem, 9vw, 4.2rem);
+  }
+
+  .galeria {
+    & .barra {
+      & .filtros {
+        gap: 2rem;
+        padding-bottom: 1rem;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  .lightbox {
+    & .lightbox-fechar {
+      transform: translatex(-50px);
+    }
+  }
+
+  .sobre {
+    & .container-sobre {
+      padding: 2rem 1rem;
+    }
+  }
+
+  .duvidas {
+    & .acordeao {
+      padding: 2rem 0;
+
+      & .cabecalho-item {
+        font-size: 1.5rem;
+        padding: 1.6rem 1.8rem;
+        gap: 1rem;
+      }
+
+      & .item-acordeao .corpo-item {
+        padding: 1.6rem 1.8rem;
+      }
+    }
+  }
+
+  .logo-whatssap {
+    right: 1.5rem;
+    bottom: 2rem;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+}

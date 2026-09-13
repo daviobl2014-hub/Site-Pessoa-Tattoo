@@ -1,0 +1,108 @@
+/* ================================================================
+   1. VARIÁVEIS DE TEMA — cores e fontes da Master Bord
+   Para mudar uma cor em TODO o site, edite aqui.
+   ================================================================ */
+:root {
+  /* Cores — extraídas do mb-theme.jsx */
+  --mb-bg: #0f1116;
+  --mb-bg-soft: #181b22;
+  --mb-bg-deep: #10100a;
+  --mb-card: #20242d;
+  --mb-card-hover: #262b36;
+  --mb-paper: #f2ece0;
+  --mb-paper-dim: #d4cfc3;
+  --mb-azul: #4a8bd6;
+  --mb-azul-glow: #6ba8e8;
+  --mb-vinho: #c44b55;
+  --mb-vinho-glow: #e56670;
+  --mb-ouro: #d4a96a;
+  --mb-muted: #8b8f99;
+  --mb-line: #2e3340;
+  --mb-line-soft: #1f2430;
+  --mb-green: #7fc291;
+
+  /* Fontes */
+  --font-display: 'UnifrakturCook', serif; /* marca, impacto */
+  --font-titulo: 'Cormorant Garamond', Georgia, serif; /* h1 e h2 de seção */
+  --font-sans: 'Jost', system-ui, sans-serif; /* corpo e UI */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+/* ================================================================
+   2. RESET E BASE
+   ================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  background: black;
+  color: var(--mb-paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+section {
+  --costura: linear-gradient(
+    to bottom,
+    #000 0,
+    transparent 20rem,
+    transparent calc(100% - 20rem),
+    #000 100%
+  );
+
+  --escurecer: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+
+  @media (min-width: 1500px) {
+    box-shadow: inset 0 0 10rem 10rem #000;
+  }
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4.2rem, 6vw, 7rem);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(255, 255, 255, 0.14) 0px 0px 2.6rem;
+  z-index: 99;
+}
+
+h3 {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  font-size: 1.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-size: 1.4rem;
+  color: var(--mb-paper-dim);
+}

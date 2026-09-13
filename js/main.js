@@ -36,14 +36,42 @@ if (galeria) {
   trilho.addEventListener('scroll', atualizaSetas, { passive: true });
   window.addEventListener('resize', atualizaSetas);
 
+  const itens = trilho.querySelectorAll('.g-item');
+
+  /* as fotos nascem com loading="lazy" (bom pro primeiro carregamento),
+     mas quem filtra quer ver a categoria na hora: antes de trocar o
+     filtro a gente tira a preguica de todas e ja manda baixar */
+  let fotosLiberadas = false;
+  function liberaFotos() {
+    if (fotosLiberadas) return;
+    fotosLiberadas = true;
+    trilho.querySelectorAll('img[loading="lazy"]').forEach((foto) => {
+      foto.loading = 'eager';
+      foto.fetchPriority = 'high';
+      /* alguns navegadores so disparam o download se o src for reatribuido */
+      if (!foto.complete) foto.src = foto.src;
+    });
+  }
+
+  /* basta encostar/focar num filtro pra ja ir buscando as fotos */
+  botoes.forEach((btn) => {
+    btn.addEventListener('pointerenter', liberaFotos, { once: true });
+    btn.addEventListener('focus', liberaFotos, { once: true });
+  });
+
   /* filtros por categoria */
   botoes.forEach((btn) => {
     btn.addEventListener('click', () => {
+      liberaFotos();
+
       botoes.forEach((b) => b.classList.remove('is-ativo'));
       btn.classList.add('is-ativo');
 
       const cat = btn.dataset.filtro;
-      trilho.querySelectorAll('.g-item').forEach((item) => {
+      itens.forEach((item) => {
+        /* a animacao de entrada tem 2.5s de atraso + escalonamento:
+           depois do primeiro filtro ela so atrapalharia */
+        item.classList.add('sem-atraso');
         item.hidden = !(cat === 'todos' || item.dataset.cat === cat);
       });
 
