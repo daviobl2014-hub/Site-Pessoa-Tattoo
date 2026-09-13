@@ -1,0 +1,7 @@
+# Pessoa Tattoo — https://www.pessoatattoo.com.br
+# Site de pagina unica: nada a esconder dos buscadores.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.pessoatattoo.com.br/sitemap.xml
