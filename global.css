@@ -16,7 +16,7 @@
   /* Fontes */
   --font-display: 'UnifrakturCook', serif; /* marca, impacto */
   --font-titulo: 'Cormorant Garamond', Georgia, serif; /* h1 e h2 de seção */
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-mono: ui-monospace, monospace; /* fonte do corpo: a do sistema */
 }
 /* ================================================================
    2. RESET E BASE
