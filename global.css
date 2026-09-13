@@ -4,18 +4,10 @@
    ================================================================ */
 :root {
   /* Cores — extraídas do mb-theme.jsx */
-  --mb-bg: #0f1116;
-  --mb-bg-soft: #181b22;
   --mb-bg-deep: #10100a;
-  --mb-card: #20242d;
-  --mb-card-hover: #262b36;
   --mb-paper: #f2ece0;
   --mb-paper-dim: #d4cfc3;
-  --mb-azul: #4a8bd6;
-  --mb-azul-glow: #6ba8e8;
   --mb-vinho: #c44b55;
-  --mb-vinho-glow: #e56670;
-  --mb-ouro: #d4a96a;
   --mb-muted: #8b8f99;
   --mb-line: #2e3340;
   --mb-line-soft: #1f2430;
@@ -24,7 +16,6 @@
   /* Fontes */
   --font-display: 'UnifrakturCook', serif; /* marca, impacto */
   --font-titulo: 'Cormorant Garamond', Georgia, serif; /* h1 e h2 de seção */
-  --font-sans: 'Jost', system-ui, sans-serif; /* corpo e UI */
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 /* ================================================================
