@@ -647,6 +647,14 @@
     justify-content: center;
     padding: 2rem;
 
+    /* <picture> nao vira caixa: a img continua sendo o item do grid */
+    & picture {
+      display: contents;
+    }
+    & source {
+      display: none;
+    }
+
     & img {
       height: 40rem;
       border-radius: 0.5rem;
