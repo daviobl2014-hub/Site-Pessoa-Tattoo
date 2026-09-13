@@ -46,7 +46,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
     <!-- cada tela baixa so o fundo que vai usar (mobile usa hero-mobile, ver style-900.css) -->
     <link rel="preload" as="image" href="img/hero.webp" media="(min-width: 901px)" fetchpriority="high" />
@@ -59,14 +58,8 @@
     <link rel="stylesheet" href="style-520.css" />
     <link rel="stylesheet" href="style-500.css" />
     <link rel="stylesheet" href="animations.css" />
-    <!-- icones e fontes externas carregam sem travar a pintura da pagina
+    <!-- fontes externas carregam sem travar a pintura da pagina
          (media="print" baixa em segundo plano, o onload ativa pra tela) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      media="print"
-      onload="this.media='all'"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap"
       rel="stylesheet"
@@ -74,7 +67,6 @@
       onload="this.media='all'"
     />
     <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap" rel="stylesheet" />
     </noscript>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
@@ -126,7 +118,7 @@
           }
         ]
       }
-    </script>
+    </script aria-label="Instagram da Pessôa Tattoo">
   </head>
   <body>
     <!-- ================================================================
@@ -156,8 +148,8 @@
         aria-expanded="false"
         aria-controls="menuMobile"
       >
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        <i class="fa-solid fa-bars icone icone-menu" aria-hidden="true"></i>
+        <i class="fa-solid fa-xmark icone icone-fechar" aria-hidden="true"></i>
       </button>
 
       <nav class="main-nav" id="menuMobile">
@@ -176,19 +168,25 @@
           <a
             href="https://www.instagram.com/pessoalucastattoo?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
             target="_blank"
+            aria-label="Instagram da Pessôa Tattoo"
           >
-            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-instagram icone icone-instagram" aria-hidden="true"></i>
           </a>
 
           <a
             href="https://www.tiktok.com/@pessoalucas?_r=1&_t=ZS-999gOnDMJyp"
             target="_blank"
+            aria-label="TikTok da Pessôa Tattoo"
           >
-            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-tiktok icone icone-tiktok" aria-hidden="true"></i>
           </a>
 
-          <a href="https://www.facebook.com/pessoaartetattoo" target="_blank">
-            <i class="fa-brands fa-facebook"></i>
+          <a
+            href="https://www.facebook.com/pessoaartetattoo"
+            target="_blank"
+            aria-label="Facebook da Pessôa Tattoo"
+          >
+            <i class="fa-brands fa-facebook icone icone-facebook" aria-hidden="true"></i>
           </a>
         </span>
       </div>
@@ -257,7 +255,7 @@
               href="https://wa.me/5524992363035?text=Olá!%20Vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20tatuagem."
               class="btn"
               target="_blank"
-              ><i class="fa-brands fa-whatsapp"></i>Agendar minha Tattoo</a
+              ><i class="fa-brands fa-whatsapp icone icone-whatsapp" aria-hidden="true"></i>Agendar minha Tattoo</a
             >
             <p>Atendimento Exclusivo via WhatsApp</p>
           </div>
@@ -676,7 +674,7 @@
 
       <div class="container-end">
         <div class="bloco-text text-focus-in">
-          <i class="fa-solid fa-map-marker-alt"></i>
+          <i class="fa-solid fa-map-marker-alt icone icone-marcador" aria-hidden="true"></i>
           <h3>Petrópolis - RJ</h3>
           <p>Atendimento com hora marcada e total privacidade</p>
 
