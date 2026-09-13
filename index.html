@@ -48,7 +48,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high" />
+    <!-- cada tela baixa so o fundo que vai usar (mobile usa hero-mobile, ver style-900.css) -->
+    <link rel="preload" as="image" href="img/hero.webp" media="(min-width: 901px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/hero-mobile.webp" media="(max-width: 900px)" fetchpriority="high" />
 
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="style.css" />
@@ -57,14 +59,24 @@
     <link rel="stylesheet" href="style-520.css" />
     <link rel="stylesheet" href="style-500.css" />
     <link rel="stylesheet" href="animations.css" />
+    <!-- icones e fontes externas carregam sem travar a pintura da pagina
+         (media="print" baixa em segundo plano, o onload ativa pra tela) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=UnifrakturCook:wght@700&amp;display=swap" rel="stylesheet" />
+    </noscript>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <!-- FICHA DO NEGOCIO PARA O GOOGLE (schema.org).
@@ -182,18 +194,28 @@
       </div>
     </header>
 
+    <main>
     <!-- ================================================================
        HOME 
        ================================================================ -->
     <section class="hero fade-in-bottom" id="inicio">
       <div class="container-hero">
         <div class="pessoa-img">
-          <img
-            src="img/pessoa.webp"
-            width="1140"
-            height="397"
-            alt="nome Pessôa"
-          />
+          <!-- telas ate 900px baixam a versao -mobile (menor); desktop segue igual -->
+          <picture>
+            <source
+              media="(max-width: 900px)"
+              srcset="img/pessoa-mobile.webp"
+              width="798"
+              height="277"
+            />
+            <img
+              src="img/pessoa.webp"
+              width="1140"
+              height="397"
+              alt="nome Pessôa"
+            />
+          </picture>
           <div class="texto-hero text-focus-in">
             <h1>Tatuagem fineline e blackwork</h1>
             <div class="fio"></div>
@@ -204,10 +226,32 @@
           </div>
         </div>
         <div class="lucas-img">
-          <img src="img/lucas.webp" width="1122" height="1402" alt="lucas" />
+          <picture>
+            <source
+              media="(max-width: 900px)"
+              srcset="img/lucas-mobile.webp"
+              width="594"
+              height="743"
+            />
+            <img
+              src="img/lucas.webp"
+              width="1122"
+              height="1402"
+              alt="lucas"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
         <div class="tatoo-img">
-          <img src="img/tatoo.webp" width="1016" height="399" alt="tattoo" />
+          <picture>
+            <source
+              media="(max-width: 900px)"
+              srcset="img/tattoo-mobile.webp"
+              width="792"
+              height="311"
+            />
+            <img src="img/tatoo.webp" width="1016" height="399" alt="tattoo" />
+          </picture>
           <div class="texto-hero text-focus-in">
             <a
               href="https://wa.me/5524992363035?text=Olá!%20Vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20tatuagem."
@@ -561,6 +605,7 @@
         <div class="bloco-iframe swing-in-top-fwd">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.76611315311!2d-43.177620399999995!3d-22.512956799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99096333902653%3A0x54922014c6916b09!2sPessoa%20tattoo!5e0!3m2!1spt-BR!2sbr!4v1788444489374!5m2!1spt-BR!2sbr"
+            title="Mapa com a localização do estúdio Pessôa Tattoo"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
@@ -569,6 +614,8 @@
         </div>
       </div>
     </section>
+
+    </main>
 
     <!-- ================= RODAPÉ ================= -->
 

@@ -171,6 +171,16 @@
     position: relative;
   }
 
+  /* <picture> nao vira caixa: a img continua se comportando como filha direta */
+  & picture {
+    display: contents;
+  }
+
+  /* sem isso a <source> vira item vazio do flex e soma um gap extra */
+  & source {
+    display: none;
+  }
+
   & .lucas-img {
     width: 40rem;
     position: relative;
@@ -181,6 +191,22 @@
   & .pessoa-img {
     margin-right: -9%;
     margin-top: -12.5rem; /* Ajuste fino para alinha img */
+
+    /* mesma altura do "Tattoo". as duas caixas tem a mesma largura
+       (45rem, encolhem juntas em telas menores), entao a conta usa
+       a largura da caixa (cqw): altura do Tattoo = largura x 399/1016.
+       o Pessôa e mais largo: cresce pra cima e a maior parte pra
+       esquerda (tudo pra esquerda cortava a letra em telas ~1000px);
+       a base das letras, o texto e o encaixe com o Lucas nao mudam */
+    container-type: inline-size;
+
+    & > picture > img {
+      width: auto;
+      max-width: none;
+      height: calc(100cqw * 0.3927);
+      margin-left: calc(100cqw * -0.08);
+      margin-top: calc(100cqw * -0.0449);
+    }
 
     & .texto-hero {
       text-shadow: 0 0 2.6rem rgba(255, 255, 255, 0.14);
@@ -309,6 +335,9 @@
   /* ---------- carrossel ---------- */
   & .carrossel {
     position: relative;
+    position: relative;
+    max-width: 130rem;
+    margin: 0 auto;
 
     & .trilho {
       --cards: 4;
@@ -705,6 +734,8 @@
 
   & .acordeao {
     padding: 5rem;
+    max-width: 100rem;
+    margin: 0 auto;
 
     & .item-acordeao {
       border-radius: 3.5rem;
@@ -905,6 +936,8 @@
     grid-template-columns: repeat(2, auto);
     place-items: center;
     gap: 2rem;
+    max-width: 120rem;
+    margin: 0 auto;
 
     & .bloco-text {
       width: 40rem;

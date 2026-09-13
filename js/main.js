@@ -80,7 +80,8 @@ if (galeria) {
     });
   });
 
-  atualizaSetas();
+  /* espera o navegador terminar o layout antes de medir (evita reflow forcado) */
+  requestAnimationFrame(atualizaSetas);
 }
 
 /* ================================================================

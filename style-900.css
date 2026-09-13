@@ -76,7 +76,7 @@
       display: contents;
     }
 
-    & .pessoa-img > img {
+    & .pessoa-img > picture > img {
       order: 1;
     }
 
@@ -84,7 +84,7 @@
       order: 2;
     }
 
-    & .tatoo-img > img {
+    & .tatoo-img > picture > img {
       order: 3;
     }
 
@@ -96,11 +96,15 @@
       order: 5;
     }
 
-    & .pessoa-img > img,
-    & .tatoo-img > img {
-      width: 100%;
-      max-width: 30rem;
-      height: auto;
+    /* "Pessôa" e "Tattoo" com a MESMA altura, usando a do Tattoo como
+       referencia (30rem de largura -> 11.78rem de altura). a largura
+       sai da proporcao de cada imagem. o min() segura telas estreitas:
+       ai a altura e a que faz o Pessôa (o mais largo) caber na tela */
+    & .pessoa-img > picture > img,
+    & .tatoo-img > picture > img {
+      height: min(11.78rem, calc((100vw - 3rem) * 0.348));
+      width: auto;
+      max-width: 100%;
       margin: 0;
     }
 
@@ -168,13 +172,13 @@
       animation: none;
     }
 
-    & .pessoa-img > img,
+    & .pessoa-img > picture > img,
     & .lucas-img,
-    & .tatoo-img > img {
+    & .tatoo-img > picture > img {
       animation: fade-in-fwd 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     }
 
-    & .pessoa-img > img {
+    & .pessoa-img > picture > img {
       animation-delay: 0.5s;
     }
 
@@ -182,7 +186,7 @@
       animation-delay: 0.9s;
     }
 
-    & .tatoo-img > img {
+    & .tatoo-img > picture > img {
       animation-delay: 1.3s;
     }
 
@@ -199,9 +203,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      & .pessoa-img > img,
+      & .pessoa-img > picture > img,
       & .lucas-img,
-      & .tatoo-img > img {
+      & .tatoo-img > picture > img {
         animation: none;
       }
     }
