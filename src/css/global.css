@@ -118,14 +118,14 @@ p {
   mask: var(--svg) center / contain no-repeat;
 }
 
-.icone-menu { --svg: url(img/menu.svg); }
-.icone-fechar { --svg: url(img/fechar.svg); }
-.icone-instagram { --svg: url(img/instagram.svg); }
-.icone-tiktok { --svg: url(img/tiktok.svg); }
-.icone-facebook { --svg: url(img/facebook.svg); }
-.icone-marcador { --svg: url(img/marcador.svg); }
+.icone-menu { --svg: url(../img/menu.svg); }
+.icone-fechar { --svg: url(../img/fechar.svg); }
+.icone-instagram { --svg: url(../img/instagram.svg); }
+.icone-tiktok { --svg: url(../img/tiktok.svg); }
+.icone-facebook { --svg: url(../img/facebook.svg); }
+.icone-marcador { --svg: url(../img/marcador.svg); }
 .icone-whatsapp {
-  --svg: url(img/whatsapp.svg);
+  --svg: url(../img/whatsapp.svg);
   /* o desenho ocupa so o meio do svg (1280x720): escala pela altura */
   -webkit-mask-size: auto 100%;
   mask-size: auto 100%;

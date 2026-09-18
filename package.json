@@ -1,0 +1,34 @@
+{
+  "name": "site-pessoa-tattoo",
+  "version": "1.0.0",
+  "description": "Site Pessoa Tattoo",
+  "scripts": {
+    "build:css": "postcss src/css/*.css --dir css",
+    "watch:css": "postcss src/css/*.css --dir css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviobl2014-hub/Site-Pessoa-Tattoo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/daviobl2014-hub/Site-Pessoa-Tattoo/issues"
+  },
+  "homepage": "https://github.com/daviobl2014-hub/Site-Pessoa-Tattoo#readme",
+  "devDependencies": {
+    "postcss": "^8.5.28",
+    "postcss-cli": "^12.0.0",
+    "postcss-preset-env": "^11.5.3"
+  },
+  "private": true,
+  "browserslist": [
+    "> 0.2%",
+    "last 4 versions",
+    "Chrome >= 49",
+    "Firefox ESR",
+    "not dead"
+  ]
+}

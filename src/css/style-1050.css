@@ -1,0 +1,11 @@
+/* ================================================================
+   BREAKPOINT 1050px
+   ORDEM IMPORTA: depende de vir depois de style.css.
+   media query nao tem especificidade extra — so vence por vir depois.
+   ================================================================ */
+
+@media (max-width: 1050px) {
+  html {
+    font-size: 56.25%;
+  }
+}

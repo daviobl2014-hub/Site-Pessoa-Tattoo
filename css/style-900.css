@@ -12,30 +12,24 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+  }
 
-    & .nav-left {
+    .header .nav-left {
       gap: 1rem;
     }
-
-    & .main-nav {
-      & .nav-links {
+      .header .main-nav .nav-links {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
+      }
 
-        & a {
+        .header .main-nav .nav-links a {
           font-size: 1.5rem;
           font-weight: bold;
         }
-      }
-    }
-
-    & .utility-strip {
-      & .social {
+      .header .utility-strip .social {
         gap: 0.4rem;
       }
-    }
-  }
 
   .hero,
   .galeria,
@@ -59,9 +53,10 @@
     justify-content: center;
     padding: 3rem 1.5rem 0;
     background-image:
-      var(--costura), var(--escurecer), url(img/hero-mobile.webp);
+      var(--costura), var(--escurecer), url(../img/hero-mobile.webp);
+  }
 
-    & .container-hero {
+    .hero .container-hero {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -71,28 +66,27 @@
       margin: 0;
     }
 
-    & .pessoa-img,
-    & .tatoo-img {
+    .hero .pessoa-img,.hero .tatoo-img {
       display: contents;
     }
 
-    & .pessoa-img > picture > img {
+    .hero .pessoa-img > picture > img {
       order: 1;
     }
 
-    & .lucas-img {
+    .hero .lucas-img {
       order: 2;
     }
 
-    & .tatoo-img > picture > img {
+    .hero .tatoo-img > picture > img {
       order: 3;
     }
 
-    & .pessoa-img > .texto-hero {
+    .hero .pessoa-img > .texto-hero {
       order: 4;
     }
 
-    & .tatoo-img > .texto-hero {
+    .hero .tatoo-img > .texto-hero {
       order: 5;
     }
 
@@ -100,15 +94,14 @@
        referencia (30rem de largura -> 11.78rem de altura). a largura
        sai da proporcao de cada imagem. o min() segura telas estreitas:
        ai a altura e a que faz o Pessôa (o mais largo) caber na tela */
-    & .pessoa-img > picture > img,
-    & .tatoo-img > picture > img {
+    .hero .pessoa-img > picture > img,.hero .tatoo-img > picture > img {
       height: min(11.78rem, calc((100vw - 3rem) * 0.348));
       width: auto;
       max-width: 100%;
       margin: 0;
     }
 
-    & .lucas-img {
+    .hero .lucas-img {
       position: static;
       width: 100%;
       max-width: 20rem;
@@ -116,7 +109,7 @@
       margin: 0;
     }
 
-    & .texto-hero {
+    .hero .texto-hero {
       position: static;
       display: flex;
       flex-direction: column;
@@ -126,40 +119,40 @@
       text-align: center;
       padding: 0;
       gap: 1.2rem;
+    }
 
-      & p {
+      .hero .texto-hero p {
         max-width: 100%;
         margin: 0 auto;
       }
 
-      & .fio {
+      .hero .texto-hero .fio {
         width: 7rem;
         margin: 0 auto;
       }
 
-      & .btn {
+      .hero .texto-hero .btn {
         align-self: center;
         margin: 0;
       }
-    }
 
-    & .pessoa-img .texto-hero {
+    .hero .pessoa-img .texto-hero {
       text-align: center;
       padding-left: 0;
-
-      & p {
-        max-width: 100%;
-      }
     }
 
-    & .tatoo-img .texto-hero {
+      .hero .pessoa-img .texto-hero p {
+        max-width: 100%;
+      }
+
+    .hero .tatoo-img .texto-hero {
       text-align: center;
       padding-right: 0;
       width: 100%;
       align-items: center;
     }
 
-    & .local {
+    .hero .local {
       position: static;
       align-self: stretch;
       width: auto;
@@ -168,58 +161,48 @@
       box-shadow: none;
     }
 
-    &.fade-in-bottom {
+    .hero.fade-in-bottom {
       animation: none;
     }
 
-    & .pessoa-img > picture > img,
-    & .lucas-img,
-    & .tatoo-img > picture > img {
+    .hero .pessoa-img > picture > img,.hero .lucas-img,.hero .tatoo-img > picture > img {
       animation: fade-in-fwd 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     }
 
-    & .pessoa-img > picture > img {
+    .hero .pessoa-img > picture > img {
       animation-delay: 0.5s;
     }
 
-    & .lucas-img {
+    .hero .lucas-img {
       animation-delay: 0.9s;
     }
 
-    & .tatoo-img > picture > img {
+    .hero .tatoo-img > picture > img {
       animation-delay: 1.3s;
     }
 
-    & .pessoa-img > .texto-hero {
+    .hero .pessoa-img > .texto-hero {
       animation-delay: 1.7s;
     }
 
-    & .tatoo-img > .texto-hero {
+    .hero .tatoo-img > .texto-hero {
       animation-delay: 2.1s;
     }
 
-    & .local {
+    .hero .local {
       animation-delay: 2.5s;
     }
 
     @media (prefers-reduced-motion: reduce) {
-      & .pessoa-img > picture > img,
-      & .lucas-img,
-      & .tatoo-img > picture > img {
+      .hero .pessoa-img > picture > img,.hero .lucas-img,.hero .tatoo-img > picture > img {
         animation: none;
       }
     }
-  }
-
-  .galeria {
-    & .barra {
+    .galeria .barra {
       justify-content: center;
       flex-direction: column;
     }
-  }
-
-  .sobre {
-    & .container-sobre {
+    .sobre .container-sobre {
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -228,8 +211,9 @@
       width: 100%;
       padding: 2rem 1.5rem;
       perspective: 800px;
+    }
 
-      & img {
+      .sobre .container-sobre img {
         animation: fade-in-fwd 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 1.3s
           both;
         background-size: cover;
@@ -237,75 +221,67 @@
         max-width: 32rem;
         height: auto;
         aspect-ratio: 1;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
       }
 
-      & h2 {
+      .sobre .container-sobre h2 {
         text-align: center;
       }
-      & .funciona {
+      .sobre .container-sobre .funciona {
         align-items: center;
-        & .bloco-1,
-        & .bloco-2,
-        & .bloco-3 {
+      }
+        .sobre .container-sobre .funciona .bloco-1,.sobre .container-sobre .funciona .bloco-2,.sobre .container-sobre .funciona .bloco-3 {
           flex-flow: column;
           gap: 0.5rem;
-          & .bola {
+        }
+          .sobre .container-sobre .funciona .bloco-1 .bola,.sobre .container-sobre .funciona .bloco-2 .bola,.sobre .container-sobre .funciona .bloco-3 .bola {
             display: none;
           }
-        }
-      }
-    }
-  }
 
   .contato {
     background-position: right;
-    & .caixa {
+  }
+    .contato .caixa {
       display: flex;
       flex-direction: column;
       height: auto;
       width: 100%;
+    }
 
-      & .telefone,
-      & .horario {
+      .contato .caixa .telefone,.contato .caixa .horario {
         padding: 0 2rem 2rem 2rem;
       }
-    }
-  }
-
-  .endereco {
-    & .container-end {
+    .endereco .container-end {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 2rem;
+    }
 
-      & .bloco-text {
+      .endereco .container-end .bloco-text {
         width: 100%;
       }
 
-      & img {
+      .endereco .container-end img {
         width: 100%;
         max-width: 100%;
         height: auto;
-        object-fit: contain;
-        mask-image: linear-gradient(to bottom, #000 80%, transparent);
+        -o-object-fit: contain;
+           object-fit: contain;
+        -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent);
+                mask-image: linear-gradient(to bottom, #000 80%, transparent);
       }
 
-      & .bloco-iframe {
+      .endereco .container-end .bloco-iframe {
         width: 100%;
         height: 30rem;
       }
-    }
-  }
 
   /* ---------- menu hamburguer (ate 500px) ---------- */
 
   /* ---------- telas muito estreitas (ate 520px) ---------- */
-
-  .logo-whatssap {
-    &::before {
+    .logo-whatssap::before {
       display: none;
     }
-  }
 }
